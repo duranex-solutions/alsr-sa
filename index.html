@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,62 +18,94 @@
     <meta name="theme-color" content="#111214" />
     <title>Laser Cleaning in Gauteng | ALSR</title>
     <link rel="canonical" href="https://alsr-sa.com/" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <script src="animations.js" defer></script>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <script src="assets/js/site.js" defer></script>
   </head>
-  <body class="landing-page">
+  <body>
+    <!-- header:start -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M4 20l1.4-4.3A8.5 8.5 0 1 1 8.300 18.700L4 20Z"/><path d="M9.500 9c0 2.800 2.700 5.500 5.500 5.500l1-1.500-1.800-1-.9.800a3.500 3.500 0 0 1-1.600-1.600l.8-.9-1-1.800-2 .5Z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7Z"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.500h6L10 21l8-10.500h-6L13 3Z"/></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c2-5 5-8 9-10"/></symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.500" r="1.750"/><circle cx="17" cy="17.500" r="1.750"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5ZM8 3v16"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M13.500 21v-8h2.700l.4-3.200h-3.100V7.800c0-.9.300-1.500 1.600-1.500h1.700V3.400c-.3 0-1.300-.1-2.400-.1-2.400 0-4 1.500-4 4.100v2.400H7.700V13h2.700v8z"/></symbol>
+      <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M16.600 3h-3v11.600a2.600 2.600 0 1 1-2.600-2.600c.3 0 .5 0 .8.100V9a5.600 5.600 0 1 0 4.800 5.500V8.600a6.700 6.700 0 0 0 3.900 1.200V6.800A3.900 3.900 0 0 1 16.600 3z"/></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M21.600 7.200a2.500 2.500 0 0 0-1.800-1.800C18.200 5 12 5 12 5s-6.200 0-7.800.4A2.500 2.500 0 0 0 2.400 7.200C2 8.800 2 12 2 12s0 3.200.4 4.800a2.500 2.500 0 0 0 1.800 1.800C5.800 19 12 19 12 19s6.200 0 7.800-.4a2.500 2.500 0 0 0 1.800-1.800c.4-1.600.4-4.800.4-4.800s0-3.200-.4-4.800zM10 15V9l5.200 3z"/></symbol>
+    </svg>
     <header class="site-header">
       <div class="container header-content">
-        <a class="brand" href="#home" aria-label="Advanced Laser Surface Restoration home">
-          <img
-            src="assets/images/Logo White 2_small.webp"
-            alt="Advanced Laser Surface Restoration"
-          />
+        <a class="brand" href="index.html" aria-label="Advanced Laser Surface Restoration (ALSR), home">
+          <img src="assets/img/brand/logo-white.webp" alt="" width="100" height="52" />
           <span class="brand-name">Advanced Laser<br /><strong>Surface Restoration</strong></span>
         </a>
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#benefits">Benefits</a>
-          <a href="#industries">Industries</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="videos.html">Videos</a>
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+          <a href="index.html#services" data-nav>Services</a>
+          <a href="index.html#how-it-works" data-nav>How it works</a>
+          <a href="gallery.html" data-nav>Our work</a>
+          <a href="videos.html" data-nav>Videos</a>
+          <a href="index.html#faq" data-nav>FAQ</a>
         </nav>
-        <a class="button button-small" href="#contact">Get in contact <span aria-hidden="true">↗</span></a>
+        <a class="button button--small header-cta" href="index.html#contact">Get a quote</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu" /></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
       </div>
     </header>
+    <div class="mobile-bar">
+      <a class="button button--whatsapp" href="https://wa.me/27826141820" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" aria-hidden="true"><use href="#i-whatsapp" /></svg>WhatsApp Tiaan
+      </a>
+      <a class="button" href="tel:+27826141820">
+        <svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg>Call
+      </a>
+    </div>
+    <!-- header:end -->
 
-    <main>
+    <main id="main" tabindex="-1">
       <section class="hero" id="home">
         <div class="container">
-          <p class="scripture-note"><span aria-hidden="true">✦</span> Jesaja 41:10</p>
+          <p class="scripture-note"><svg class="icon" aria-hidden="true"><use href="#i-book" /></svg> Jesaja 41:10</p>
         </div>
         <div class="container hero-layout">
           <div class="hero-copy">
-            <p class="eyebrow"><span class="eyebrow-mark"></span> Mobile laser cleaning · Gauteng, South Africa</p>
+            <p class="eyebrow">Mobile laser cleaning · Gauteng, South Africa</p>
             <h1>Restore the surface.<br /><em>Respect the material.</em></h1>
             <p class="hero-description">
               Advanced Laser Surface Restoration brings precise, chemical-free cleaning to your site.
               Remove rust, paint and contaminants while keeping your operation moving.
             </p>
-            <div class="hero-actions">
-              <a class="button" href="#contact">Request a consultation <span aria-hidden="true">→</span></a>
+            <div class="button-row">
+              <a class="button" href="#contact">Get a quote</a>
               <a class="text-link" href="tel:+27826141820">Call Tiaan <span>082 614 1820</span></a>
             </div>
             <div class="hero-points" aria-label="Service highlights">
-              <div><span aria-hidden="true">✳</span> 100% mobile service</div>
-              <div><span aria-hidden="true">✳</span> No harsh chemicals</div>
-              <div><span aria-hidden="true">✳</span> Precise, non-abrasive</div>
+              <div><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> 100% mobile service</div>
+              <div><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> No harsh chemicals</div>
+              <div><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Precise, non-abrasive</div>
             </div>
           </div>
           <div class="hero-visual">
@@ -83,7 +115,7 @@
               alt="Laser cleaning in progress on an industrial metal surface"
             />
             <div class="image-caption">
-              <span class="caption-icon" aria-hidden="true">✦</span>
+              <span class="caption-icon" aria-hidden="true"><svg class="icon"><use href="#i-pin" /></svg></span>
               <span><strong>We bring the equipment to you</strong><br />On-site service across Gauteng and surrounding areas</span>
             </div>
             <div class="hero-stamp" aria-hidden="true"><span>LASER</span><strong>PRECISION<br />RESTORATION</strong></div>
@@ -91,7 +123,7 @@
         </div>
       </section>
 
-      <section class="intro section" id="about">
+      <section class="intro section section--surface" id="about">
         <div class="container intro-layout">
           <div class="section-heading">
             <p class="eyebrow">A cleaner way to restore</p>
@@ -108,33 +140,33 @@
               brings the laser equipment to your site, helping you restore surfaces without
               unnecessary disruption.
             </p>
-            <a class="inline-link" href="#benefits">Discover the benefits <span aria-hidden="true">→</span></a>
+            <a class="inline-link" href="#benefits">Discover the benefits <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
           </div>
         </div>
       </section>
 
-      <section class="benefits section" id="benefits">
+      <section class="benefits section section--alt" id="benefits">
         <div class="container">
-          <div class="section-heading section-heading-centered">
+          <div class="section-heading section-heading--centered">
             <p class="eyebrow">Why laser cleaning</p>
             <h2>Better for your surface.<br /><em>Better for your workflow.</em></h2>
           </div>
           <div class="benefit-grid">
-            <article class="benefit-card">
-              <span class="benefit-number">01</span>
-              <div class="benefit-symbol" aria-hidden="true">⌖</div>
+            <article class="card benefit-card">
+              <span class="card-number">01</span>
+              <div class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-target" /></svg></div>
               <h3>Precision</h3>
               <p>Non-abrasive laser pulses remove rust and paint without impacting the underlying material or its profile.</p>
             </article>
-            <article class="benefit-card">
-              <span class="benefit-number">02</span>
-              <div class="benefit-symbol" aria-hidden="true">↗</div>
+            <article class="card benefit-card">
+              <span class="card-number">02</span>
+              <div class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-bolt" /></svg></div>
               <h3>Speed</h3>
               <p>Fast-acting cleaning helps reduce operational downtime and gets your surfaces ready for what comes next.</p>
             </article>
-            <article class="benefit-card">
-              <span class="benefit-number">03</span>
-              <div class="benefit-symbol" aria-hidden="true">♧</div>
+            <article class="card benefit-card">
+              <span class="card-number">03</span>
+              <div class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-leaf" /></svg></div>
               <h3>Sustainability</h3>
               <p>A chemical-free process avoids harsh cleaning products and abrasive media for a cleaner working environment.</p>
             </article>
@@ -142,13 +174,13 @@
         </div>
       </section>
 
-      <section class="industries section" id="industries">
+      <section class="industries section section--deep" id="industries">
         <div class="container industries-layout">
           <div class="industries-heading">
             <p class="eyebrow">Built for demanding work</p>
             <h2>One precise process.<br /><em>Many industries.</em></h2>
             <p>From individual components to heavy equipment, we bring mobile laser cleaning to the job site.</p>
-            <a class="inline-link" href="#contact">Talk to us about your project <span aria-hidden="true">→</span></a>
+            <a class="inline-link" href="#contact">Talk to us about your project <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
           </div>
           <div class="industry-list">
             <span class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V9l6 3V8l6 4V5h6v16H3Z"/><path d="M7 16h2m3 0h2m3-7h2"/></svg>Industrial</span>
@@ -165,7 +197,7 @@
         </div>
       </section>
 
-      <section class="gallery section" id="gallery">
+      <section class="gallery section section--surface" id="gallery">
         <div class="container">
           <div class="gallery-heading">
             <div class="section-heading">
@@ -173,12 +205,12 @@
               <h2>See laser cleaning <em>in action.</em></h2>
             </div>
             <div class="gallery-actions">
-              <a class="inline-link" href="gallery.html">View project gallery <span aria-hidden="true">→</span></a>
-              <a class="inline-link" href="videos.html">Watch our videos <span aria-hidden="true">→</span></a>
+              <a class="inline-link" href="gallery.html">View project gallery <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+              <a class="inline-link" href="videos.html">Watch our videos <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
             </div>
           </div>
           <div class="gallery-grid">
-            <figure class="gallery-card gallery-card-large">
+            <figure class="gallery-card">
               <img
                 src="assets/images/StructureBefore_result.webp"
                 alt="Rust removal project using laser surface restoration"
@@ -198,15 +230,13 @@
         </div>
       </section>
 
-      <section class="contact section" id="contact">
+      <section class="contact section section--alt" id="contact">
         <div class="container contact-layout">
           <div class="contact-copy">
             <p class="eyebrow">Call us · On-site assessment · Laser cleaning</p>
             <h2>Ready to restore<br /><em>your surface?</em></h2>
             <p>Tell us what you need cleaned. Our team can help you explore the right approach and request a detailed service quote.</p>
-            <a class="button button-light" href="mailto:sales.alsr@gmail.com?subject=Laser%20cleaning%20inquiry">
-              Ask about your project <span aria-hidden="true">→</span>
-            </a>
+            <a class="button" href="mailto:sales.alsr@gmail.com?subject=Laser%20cleaning%20inquiry">Get a quote</a>
           </div>
           <div class="contact-details">
             <h3>Get in touch</h3>
@@ -230,23 +260,53 @@
       </section>
     </main>
 
+    <!-- footer:start -->
     <footer class="site-footer">
-      <div class="container footer-content">
-        <a class="footer-brand" href="#home" aria-label="Back to top">
-          <img
-            src="assets/images/Logo White 2_small.webp"
-            alt="Logo that takes you back to top/home"
-          />
-        </a>
-        <p>Advanced Laser Surface Restoration<br /><span>Restoring surfaces to their original brilliance.</span></p>
-        <div class="social-links" aria-label="Social media">
-          <a href="https://www.facebook.com/share/1BM2h2xgPa/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.4H7.7V13h2.7v8z"/></svg>Facebook</a>
-          <a href="https://www.tiktok.com/@alsr753?_r=1&amp;_t=ZS-9681ayNeko3" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 3h-3v11.6a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9a5.6 5.6 0 1 0 4.8 5.5V8.6a6.700 6.700 0 0 0 3.900 1.200V6.800A3.900 3.900 0 0 1 16.600 3z"/></svg>TikTok</a>
-          <a href="https://youtube.com/@alsr-lazersa?si=rccTeD06vxPiSs9j" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.600 7.200a2.500 2.500 0 0 0-1.800-1.800C18.200 5 12 5 12 5s-6.200 0-7.800.4A2.500 2.500 0 0 0 2.400 7.200C2 8.800 2 12 2 12s0 3.200.4 4.800a2.500 2.500 0 0 0 1.800 1.800C5.800 19 12 19 12 19s6.200 0 7.800-.4a2.500 2.500 0 0 0 1.800-1.800c.4-1.600.4-4.800.4-4.800s0-3.200-.4-4.800zM10 15V9l5.200 3z"/></svg>YouTube</a>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" aria-label="Advanced Laser Surface Restoration (ALSR), home">
+              <img src="assets/img/brand/logo-white.webp" alt="" width="120" height="52" loading="lazy" />
+            </a>
+            <p class="footer-name">Advanced Laser Surface Restoration (ALSR)</p>
+            <p>Mobile laser cleaning for metal, on your site, without chemicals or blasting media.</p>
+            <p>Based in Kempton Park. Serving Gauteng and surrounding areas, and nationwide for larger jobs.</p>
+          </div>
+          <nav aria-label="Footer navigation">
+            <h2>Explore</h2>
+            <ul class="footer-list">
+              <li><a href="index.html#services" data-nav>Services</a></li>
+              <li><a href="index.html#how-it-works" data-nav>How it works</a></li>
+              <li><a href="gallery.html" data-nav>Our work</a></li>
+              <li><a href="videos.html" data-nav>Videos</a></li>
+              <li><a href="index.html#faq" data-nav>FAQ</a></li>
+              <li><a href="index.html#contact" data-nav>Get a quote</a></li>
+            </ul>
+          </nav>
+          <div>
+            <h2>Contact</h2>
+            <ul class="footer-list">
+              <li><a href="tel:+27826141820"><svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg>+27 82 614 1820</a></li>
+              <li><a href="https://wa.me/27826141820" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp" /></svg>WhatsApp Tiaan</a></li>
+              <li><a href="mailto:tiaan.alsr@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>tiaan.alsr@gmail.com</a></li>
+              <li><a href="mailto:sales.alsr@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>sales.alsr@gmail.com</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Follow</h2>
+            <ul class="social-links" aria-label="Social media">
+              <li><a href="https://www.facebook.com/share/1BM2h2xgPa/" target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-facebook" /></svg>Facebook</a></li>
+              <li><a href="https://www.tiktok.com/@alsr753?_r=1&amp;_t=ZS-9681ayNeko3" target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-tiktok" /></svg>TikTok</a></li>
+              <li><a href="https://youtube.com/@alsr-lazersa?si=rccTeD06vxPiSs9j" target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-youtube" /></svg>YouTube</a></li>
+            </ul>
+          </div>
         </div>
-        <span class="copyright">© 2026 Advanced Laser Surface Restoration</span>
-        <a class="designer-link" href="https://duranexsolutions.com">Made by Duranex</a>
+        <div class="footer-bottom">
+          <span>© <span data-year>2026</span> Advanced Laser Surface Restoration (ALSR)</span>
+          <a href="https://duranexsolutions.com">Made by Duranex</a>
+        </div>
       </div>
     </footer>
+    <!-- footer:end -->
   </body>
 </html>

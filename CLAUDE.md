@@ -1,0 +1,12 @@
+# ALSR website
+- Static marketing site for Advanced Laser Surface Restoration (ALSR), mobile laser cleaning based in Kempton Park, Gauteng. Live: https://alsr-sa.com. B2B audience.
+- Stack: plain HTML/CSS/vanilla JS, no framework, no hosting build. Videos are YouTube embeds. Form: Web3Forms → Tiaan primary; Anne-Marie via CC or Gmail forward.
+- Hosted: GitHub Pages (duranex-solutions/alsr-sa, `main`) at the /alsr-sa/ subpath; alsr-sa.com via Netlify (canonical). **Relative URLs only** (no leading `/`). Pushing `main` publishes live (Netlify auto-publish). Work on branch `redesign`.
+- Pages: index.html, gallery.html, videos.html, 404.html. Shared header/footer in /partials. Run `node scripts/sync-partials.mjs` after editing them.
+- Run locally from the root: `npx serve .` or `python -m http.server 8000`.
+- **Read REDESIGN_PLAN.md (§0 rules and facts first) before working.** Tick phase checkboxes as tasks complete.
+- Don't open image/video files unless the task needs it. Use filenames and sizes.
+- **Never** name the laser's brand, model, manufacturer, wattage or wavelength anywhere (copy, alt, filenames, meta, schema). Max: "industrial-grade fibre laser". Never show the machine.
+- Never invent client facts (prices, stats, testimonials, certifications). Use `[[CLIENT: …]]` placeholders.
+- SA/UK English. Brand "Advanced Laser Surface Restoration (ALSR)". Service term "laser cleaning".
+- Keep the dark + orange (#f07824) look. Use tokens in assets/css/site.css, no hard-coded colours.
