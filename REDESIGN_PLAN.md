@@ -200,12 +200,24 @@ All answered or parked by the client (2026-11). Answers live in §0. Build **no*
   - Images are still in `assets/images/` (kebab-case move to `assets/img/work/` is Phase 4). Only the logo moved (`assets/img/brand/logo-white.webp`); `style.css`, `animations.js`, the logo PNG and `_result` logo were removed. MP4s and the original JPGs are untouched. Videos are still eager iframes. Page copy is unchanged except CTA labels ("Get a quote"). The hero photo appears to show the laser unit, so check it in the Phase 4 image review.
 
 ### Phase 3 Homepage (layout + copy rewrite)
-- [ ] Build sections 1–11 (§4) with copy from §0 facts only; verse line in hero
-- [ ] Services, materials, comparison table, process, industries, about, FAQ (incl. limits)
-- [ ] Before/after showcase from the existing `_gallery` pairs (swapped to srcset in Phase 4)
-- [ ] Web3Forms form (`access_key` = `[[CLIENT: WEB3FORMS_ACCESS_KEY]]`, Tiaan's inbox; `subject` and `from_name` fields, honeypot, success/error states, mailto fallback to both addresses), WhatsApp `wa.me/27826141820`, tel links, POPIA note
-- [ ] Equipment-rule grep: no brand/model/W/nm in any file
-- Files: index.html, assets/css/site.css, assets/js/site.js
+- [x] Build sections 1–11 (§4) with copy from §0 facts only; verse line in hero
+- [x] Services, materials, comparison table, process, industries, about, FAQ (incl. limits)
+- [x] Before/after showcase from the existing `_gallery` pairs (swapped to srcset in Phase 4)
+- [x] Web3Forms form (`access_key` = `[[CLIENT: WEB3FORMS_ACCESS_KEY]]`, Tiaan's inbox; `subject` and `from_name` fields, honeypot, success/error states, mailto fallback to both addresses), WhatsApp `wa.me/27826141820`, tel links, POPIA note
+- [x] Equipment-rule grep: no brand/model/W/nm in any file
+- Files: index.html, assets/css/site.css, assets/js/site.js (+ partials/header.html for new sprite icons)
+- **Phase 3 notes:**
+  - Home section ids: `#home` (hero), `#services`, `#results` (before/after), `#compare`, `#how-it-works`, `#industries`, `#about`, `#faq` (first item `#faq-fit` = limits, open by default), `#contact`. The Why ALSR strip has no id. Nav scroll-spy now finds Services / How it works / FAQ.
+  - CTAs: one primary, "Get a quote" (header + hero → `#contact`; the form button reads "Send quote request"). One secondary: "Call 082 614 1820" (ghost button, `tel:`) in the hero. WhatsApp sits in the mobile bar, About and Contact only. Other sections use text links, not buttons. The helper line "Not sure? Send photos for a free assessment or test patch." appears under the hero CTAs and in the contact lead.
+  - **Hero image swapped.** `HeroImage_result.webp` may show the laser unit (Phase 2 note), so the hero now uses the steel frame close-up before/after pair (`StructureClose*_gallery.webp`, `fetchpriority="high"`). Phase 4 should still review the old hero file and drop it if unused. The `Facebook PFP` teaser image is gone from home.
+  - Scripture shown as "Built on faith · Isaiah 41:10" (English, replacing "Jesaja") as a quiet line under the hero chips, not above the H1. It also appears once in About ("ALSR is built on faith…").
+  - Showcase uses one pair per category: steel frame (rust), car door (paint), floor surface (residue). Titles follow "object · what was removed". The testimonials slot is an HTML comment after the showcase (§5.1). No visible placeholder, per §5.
+  - Comparison table is qualitative only, with a laser column highlight. At ≤680 px it becomes stacked cards (`td[data-label]`). It ends with an honest link to the FAQ limits.
+  - Form: posts to `https://api.web3forms.com/submit` (works without JS). With JS, `site.js` uses fetch with ok/error states in a `role="status"` region, `aria-invalid` on invalid fields, and a mailto/WhatsApp fallback. While the key is still the `[[CLIENT…]]` placeholder, JS stops the submit and shows the fallback. Fields: name*, company, phone*, email (Web3Forms uses it as reply-to), location*, job type (the 5 services + "Not sure yet"), message*, photo link (url). `botcheck` honeypot. **CC to Anne-Marie not wired**: add `<input type="hidden" name="ccemail" value="sales.alsr@gmail.com">` if the Web3Forms plan supports it, otherwise use the Gmail forward.
+  - New sprite icons in the header partial: `i-user`, `i-camera`, `i-shield`, `i-layers`, `i-flame`, `i-droplet`, `i-brush`, `i-clipboard` (synced to all pages).
+  - CSS: the old home blocks (hero-stamp, image-caption, intro, benefit-grid, gallery-card, old contact) were replaced in the `pages` layer. Gallery/video blocks are untouched. Breakpoints: 1024 (trust/steps to 2 columns), 900 (two-column layouts stack), 680 (single column, stacked table), 480 (card padding).
+  - Visible placeholders left on home: `[[CLIENT: WEB3FORMS_ACCESS_KEY]]` (hidden input) and `[[CLIENT: on-site requirements…]]` (FAQ "What do you need from us on site?"). HTML `TODO client` comments mark the certifications (Why strip, About) and testimonials slots.
+  - Checked in headless Chrome at 360/768/1280: no horizontal overflow. Meta title/description untouched (Phase 5).
 
 ### Phase 4 Gallery & Videos pages + media optimisation
 - [ ] **Image review (allowed exception):** view each gallery/hero/poster image plus IMG_9656/9658. Flag any readable machine label or visible unit to the user, and crop or drop it.

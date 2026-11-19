@@ -51,6 +51,14 @@
       <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c2-5 5-8 9-10"/></symbol>
       <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.500" r="1.750"/><circle cx="17" cy="17.500" r="1.750"/></symbol>
       <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5ZM8 3v16"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+      <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4Z"/><circle cx="12" cy="13" r="3.500"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.500 3 8.500 7 10 4-1.500 7-5.500 7-10V6Z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5Z"/><path d="m3 13 9 5 9-5"/></symbol>
+      <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21c-3.900 0-6.500-2.600-6.500-6.200 0-3.600 3-5.800 3.700-9.800 2.300 1.500 3.300 3.700 3.300 5.500 1-.5 1.800-1.700 2-3 2 1.700 4 4.200 4 7.300 0 3.600-2.600 6.200-6.500 6.200Z"/></symbol>
+      <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 3s6 6.500 6 11a6 6 0 0 1-12 0c0-4.500 6-11 6-11Z"/></symbol>
+      <symbol id="i-brush" viewBox="0 0 24 24"><path d="M14 4 20 10l-7 7-6-6Z"/><path d="M7 11 4 14c-1 1-1 3 0 4l2 2c1 1 3 1 4 0l3-3"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 11h6M9 15h4"/></symbol>
       <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M13.500 21v-8h2.700l.4-3.200h-3.100V7.800c0-.9.300-1.500 1.600-1.500h1.700V3.400c-.3 0-1.300-.1-2.400-.1-2.400 0-4 1.500-4 4.100v2.400H7.700V13h2.700v8z"/></symbol>
       <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M16.600 3h-3v11.600a2.600 2.600 0 1 1-2.600-2.600c.3 0 .5 0 .8.100V9a5.600 5.600 0 1 0 4.800 5.500V8.600a6.700 6.700 0 0 0 3.900 1.200V6.800A3.900 3.900 0 0 1 16.600 3z"/></symbol>
       <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M21.600 7.200a2.500 2.500 0 0 0-1.800-1.800C18.200 5 12 5 12 5s-6.200 0-7.800.4A2.500 2.500 0 0 0 2.400 7.200C2 8.800 2 12 2 12s0 3.200.4 4.800a2.500 2.500 0 0 0 1.800 1.800C5.800 19 12 19 12 19s6.200 0 7.800-.4a2.500 2.500 0 0 0 1.800-1.800c.4-1.600.4-4.800.4-4.800s0-3.200-.4-4.800zM10 15V9l5.200 3z"/></symbol>
@@ -85,180 +93,555 @@
     </div>
     <!-- header:end -->
 
+
     <main id="main" tabindex="-1">
-      <section class="hero" id="home">
-        <div class="container">
-          <p class="scripture-note"><svg class="icon" aria-hidden="true"><use href="#i-book" /></svg> Jesaja 41:10</p>
-        </div>
+      <!-- 1. Hero -->
+      <section class="hero" id="home" aria-labelledby="hero-title">
         <div class="container hero-layout">
           <div class="hero-copy">
-            <p class="eyebrow">Mobile laser cleaning · Gauteng, South Africa</p>
-            <h1>Restore the surface.<br /><em>Respect the material.</em></h1>
+            <p class="eyebrow">Advanced Laser Surface Restoration (ALSR)</p>
+            <h1 id="hero-title">Mobile laser cleaning <em>in Gauteng</em></h1>
             <p class="hero-description">
-              Advanced Laser Surface Restoration brings precise, chemical-free cleaning to your site.
-              Remove rust, paint and contaminants while keeping your operation moving.
+              We remove rust, paint, mill scale and grease from metal on your site, with no chemicals,
+              no blasting media and no grit to clean up afterwards. You get a clean surface that is
+              ready for painting, coating or welding.
             </p>
             <div class="button-row">
               <a class="button" href="#contact">Get a quote</a>
-              <a class="text-link" href="tel:+27826141820">Call Tiaan <span>082 614 1820</span></a>
+              <a class="button button--ghost" href="tel:+27826141820">
+                <svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg>Call 082 614 1820
+              </a>
             </div>
-            <div class="hero-points" aria-label="Service highlights">
-              <div><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> 100% mobile service</div>
-              <div><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> No harsh chemicals</div>
-              <div><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Precise, non-abrasive</div>
-            </div>
+            <p class="hero-helper">Not sure? <a href="#contact">Send photos for a free assessment or test patch.</a></p>
+            <ul class="hero-points" aria-label="Service highlights">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>No chemicals or blasting media</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Steel, stainless, aluminium and more</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Done on your site</li>
+            </ul>
+            <p class="scripture-note">
+              <svg class="icon" aria-hidden="true"><use href="#i-book" /></svg>
+              <span>Built on faith · <strong>Isaiah 41:10</strong></span>
+            </p>
           </div>
-          <div class="hero-visual">
-            <img
-              class="hero-image"
-              src="assets/images/HeroImage_result.webp"
-              alt="Laser cleaning in progress on an industrial metal surface"
-            />
-            <div class="image-caption">
+
+          <figure class="hero-visual">
+            <div class="hero-compare">
+              <div class="hero-compare-item">
+                <img
+                  src="assets/images/StructureCloseBefore_gallery.webp"
+                  alt="Close-up of a rusted steel frame before laser cleaning"
+                  fetchpriority="high"
+                />
+                <span class="photo-tag tag tag--before">Before</span>
+              </div>
+              <div class="hero-compare-item">
+                <img
+                  src="assets/images/StructureCloseAfter_gallery.webp"
+                  alt="The same steel frame after laser cleaning, rust removed back to bare metal"
+                />
+                <span class="photo-tag tag tag--after">After</span>
+              </div>
+            </div>
+            <figcaption class="hero-caption">
               <span class="caption-icon" aria-hidden="true"><svg class="icon"><use href="#i-pin" /></svg></span>
-              <span><strong>We bring the equipment to you</strong><br />On-site service across Gauteng and surrounding areas</span>
-            </div>
-            <div class="hero-stamp" aria-hidden="true"><span>LASER</span><strong>PRECISION<br />RESTORATION</strong></div>
-          </div>
+              <span><strong>Steel frame · rust removed</strong><br />From our project gallery</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <section class="intro section section--surface" id="about">
-        <div class="container intro-layout">
+      <!-- 2. Why ALSR -->
+      <section class="section section--surface trust" aria-labelledby="trust-title">
+        <div class="container">
+          <h2 class="eyebrow" id="trust-title">Why work with ALSR</h2>
+          <!-- TODO client: certifications, safety training, insurance, B-BBEE or CSD go here once confirmed (REDESIGN_PLAN §5.4). -->
+          <ul class="trust-list">
+            <li class="trust-item">
+              <span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-user" /></svg></span>
+              <div>
+                <h3>Owner-operated</h3>
+                <p>Tiaan, the owner, carries out every job personally. No subcontractors.</p>
+              </div>
+            </li>
+            <li class="trust-item">
+              <span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-truck" /></svg></span>
+              <div>
+                <h3>No call-out fee in Gauteng</h3>
+                <p>Further afield, a distance-based call-out fee may apply.</p>
+              </div>
+            </li>
+            <li class="trust-item">
+              <span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-camera" /></svg></span>
+              <div>
+                <h3>Free assessment</h3>
+                <p>Send photos, or ask for a test patch, before you commit to anything.</p>
+              </div>
+            </li>
+            <li class="trust-item">
+              <span class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-pin" /></svg></span>
+              <div>
+                <h3>Based in Kempton Park</h3>
+                <p>Serving Gauteng and surrounding areas, and nationwide for larger jobs.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 3. Services -->
+      <section class="section section--alt" id="services" aria-labelledby="services-title">
+        <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">A cleaner way to restore</p>
-            <h2>Powerful cleaning.<br /><em>Gentle on the base.</em></h2>
+            <p class="eyebrow">Services</p>
+            <h2 id="services-title">What laser cleaning removes</h2>
+            <p class="lead">
+              An industrial-grade fibre laser lifts the unwanted layer off the surface and leaves the
+              metal underneath intact. It works best on medium and large metal surfaces and structures.
+            </p>
           </div>
-          <div class="intro-copy">
-            <p>
-              Laser cleaning uses concentrated light to lift rust, paint and other unwanted
-              surface contaminants. It is a modern alternative to abrasive methods and harsh
-              chemicals, giving you precise results with less mess.
-            </p>
-            <p>
-              We are a South African-based company offering a fully mobile service. Our team
-              brings the laser equipment to your site, helping you restore surfaces without
-              unnecessary disruption.
-            </p>
-            <a class="inline-link" href="#benefits">Discover the benefits <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+          <div class="grid grid--3 service-grid">
+            <article class="card service-card">
+              <div class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-shield" /></svg></div>
+              <h3>Rust and corrosion removal</h3>
+              <p>Takes surface rust and corrosion back to clean metal without grinding away the material beneath.</p>
+              <p class="service-jobs"><strong>Typical jobs:</strong> vehicle chassis, trailers, structural steel, tanks</p>
+            </article>
+            <article class="card service-card">
+              <div class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-layers" /></svg></div>
+              <h3>Paint and coating stripping</h3>
+              <p>Strips light to medium paint and coatings. Multi-layer or thick coatings are assessed per job.</p>
+              <p class="service-jobs"><strong>Typical jobs:</strong> vehicle parts, machinery, steelwork due for recoating</p>
+            </article>
+            <article class="card service-card">
+              <div class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-flame" /></svg></div>
+              <h3>Oxide, mill scale and weld discolouration</h3>
+              <p>Clears oxide layers, mill scale and heat tint around welds on steel and stainless steel.</p>
+              <p class="service-jobs"><strong>Typical jobs:</strong> fabricated steel, stainless welds, new steel before coating</p>
+            </article>
+            <article class="card service-card">
+              <div class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-droplet" /></svg></div>
+              <h3>Oil, grease and carbon residue</h3>
+              <p>Removes oil, grease and carbon build-up from metal without solvents or degreasers.</p>
+              <p class="service-jobs"><strong>Typical jobs:</strong> machinery, moulds in service, mining and marine equipment</p>
+            </article>
+            <article class="card service-card">
+              <div class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-brush" /></svg></div>
+              <h3>Surface prep for paint, coating or welding</h3>
+              <p>Leaves a clean, lightly textured surface that helps new paint and coatings adhere.</p>
+              <p class="service-jobs"><strong>Typical jobs:</strong> pre-paint prep, pre-weld cleaning, recoating projects</p>
+            </article>
+            <aside class="card materials-card" aria-labelledby="materials-title">
+              <h3 id="materials-title">Materials we clean</h3>
+              <ul class="materials-list">
+                <li>Steel</li>
+                <li>Stainless steel</li>
+                <li>Cast iron</li>
+                <li>Aluminium</li>
+                <li>Copper and brass</li>
+                <li>Titanium</li>
+              </ul>
+              <p>Some stone and concrete, on assessment.</p>
+              <a class="inline-link" href="#faq-fit">Is laser cleaning right for my job? <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            </aside>
           </div>
         </div>
       </section>
 
-      <section class="benefits section section--alt" id="benefits">
+      <!-- 4. Before/after showcase -->
+      <section class="section section--surface" id="results" aria-labelledby="results-title">
+        <div class="container">
+          <div class="split-heading">
+            <div class="section-heading">
+              <p class="eyebrow">Our work</p>
+              <h2 id="results-title">Before and after</h2>
+              <p class="lead">Real results from our laser cleaning jobs, photographed before and after.</p>
+            </div>
+            <div class="split-heading-links">
+              <a class="inline-link" href="gallery.html">See the full gallery <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+              <a class="inline-link" href="videos.html">Watch it on video <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            </div>
+          </div>
+          <div class="showcase-grid">
+            <article class="card before-after-pair">
+              <h3>Steel frame</h3>
+              <p class="pair-meta">Rust and corrosion removed</p>
+              <div class="comparison-photos">
+                <figure><img src="assets/images/StructureBefore_gallery.webp" alt="Rusted steel frame before laser cleaning" loading="lazy" /><figcaption><span class="tag tag--before">Before</span></figcaption></figure>
+                <figure><img src="assets/images/StructureAfter_gallery.webp" alt="Steel frame after laser cleaning, rust removed" loading="lazy" /><figcaption><span class="tag tag--after">After</span></figcaption></figure>
+              </div>
+            </article>
+            <article class="card before-after-pair">
+              <h3>Car door</h3>
+              <p class="pair-meta">Paint stripped</p>
+              <div class="comparison-photos">
+                <figure><img src="assets/images/CarDoorBefore_gallery.webp" alt="Painted car door before laser cleaning" loading="lazy" /><figcaption><span class="tag tag--before">Before</span></figcaption></figure>
+                <figure><img src="assets/images/CarDoorAfter_gallery.webp" alt="Car door after laser cleaning, paint stripped" loading="lazy" /><figcaption><span class="tag tag--after">After</span></figcaption></figure>
+              </div>
+            </article>
+            <article class="card before-after-pair">
+              <h3>Floor surface</h3>
+              <p class="pair-meta">Contaminants and residue removed</p>
+              <div class="comparison-photos">
+                <figure><img src="assets/images/FloorBefore_gallery.webp" alt="Contaminated floor surface before laser cleaning" loading="lazy" /><figcaption><span class="tag tag--before">Before</span></figcaption></figure>
+                <figure><img src="assets/images/FloorAfter_gallery.webp" alt="Floor surface after laser cleaning, residue removed" loading="lazy" /><figcaption><span class="tag tag--after">After</span></figcaption></figure>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!--
+        TODO client: Testimonials section goes here once real, approved testimonials exist
+        (name, company, permission). See REDESIGN_PLAN §5.1. Do not add placeholder quotes.
+      -->
+
+      <!-- 5. Laser vs sandblasting vs chemicals -->
+      <section class="section section--deep" id="compare" aria-labelledby="compare-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Why switch</p>
+            <h2 id="compare-title">Laser cleaning vs sandblasting and chemical stripping</h2>
+            <p class="lead">
+              Sandblasting and chemical strippers both get the job done, but they leave you with waste,
+              clean-up and wear on the part. Here is how the three methods compare.
+            </p>
+          </div>
+          <div class="table-wrap compare-wrap">
+            <table class="table compare-table">
+              <caption class="visually-hidden">Laser cleaning compared with sandblasting and chemical stripping</caption>
+              <thead>
+                <tr>
+                  <th scope="col"><span class="visually-hidden">Factor</span></th>
+                  <th scope="col" class="is-laser">Laser cleaning</th>
+                  <th scope="col">Sandblasting</th>
+                  <th scope="col">Chemical stripping</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Waste</th>
+                  <td class="is-laser" data-label="Laser cleaning"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>No media. Only the removed rust, paint or residue.</td>
+                  <td data-label="Sandblasting">Spent grit and dust to contain and dispose of</td>
+                  <td data-label="Chemical stripping">Used chemicals and sludge to dispose of</td>
+                </tr>
+                <tr>
+                  <th scope="row">Effect on the base metal</th>
+                  <td class="is-laser" data-label="Laser cleaning"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Non-abrasive. Removes the surface layer, not the metal.</td>
+                  <td data-label="Sandblasting">Abrasive. Wears away some base material.</td>
+                  <td data-label="Chemical stripping">Can etch or attack some metals</td>
+                </tr>
+                <tr>
+                  <th scope="row">Chemicals</th>
+                  <td class="is-laser" data-label="Laser cleaning"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>None</td>
+                  <td data-label="Sandblasting">None</td>
+                  <td data-label="Chemical stripping">Solvents or caustic strippers</td>
+                </tr>
+                <tr>
+                  <th scope="row">Clean-up</th>
+                  <td class="is-laser" data-label="Laser cleaning"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Minimal</td>
+                  <td data-label="Sandblasting">Extensive. Grit gets into gaps, bearings and machinery.</td>
+                  <td data-label="Chemical stripping">Neutralise, rinse and dispose</td>
+                </tr>
+                <tr>
+                  <th scope="row">Targeting one area</th>
+                  <td class="is-laser" data-label="Laser cleaning"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Cleans just the area you need</td>
+                  <td data-label="Sandblasting">Needs heavy masking</td>
+                  <td data-label="Chemical stripping">Needs masking and dwell time</td>
+                </tr>
+                <tr>
+                  <th scope="row">On your site</th>
+                  <td class="is-laser" data-label="Laser cleaning"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Yes, fully mobile</td>
+                  <td data-label="Sandblasting">Usually needs containment or a blasting bay</td>
+                  <td data-label="Chemical stripping">Needs ventilation and run-off control</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="compare-note">
+            Laser cleaning isn't right for every job. <a href="#faq-fit">See where it works and where it doesn't.</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. How it works -->
+      <section class="section section--alt" id="how-it-works" aria-labelledby="process-title">
         <div class="container">
           <div class="section-heading section-heading--centered">
-            <p class="eyebrow">Why laser cleaning</p>
-            <h2>Better for your surface.<br /><em>Better for your workflow.</em></h2>
+            <p class="eyebrow">How it works</p>
+            <h2 id="process-title">From photos to a clean surface in four steps</h2>
           </div>
-          <div class="benefit-grid">
-            <article class="card benefit-card">
-              <span class="card-number">01</span>
-              <div class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-target" /></svg></div>
-              <h3>Precision</h3>
-              <p>Non-abrasive laser pulses remove rust and paint without impacting the underlying material or its profile.</p>
-            </article>
-            <article class="card benefit-card">
-              <span class="card-number">02</span>
-              <div class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-bolt" /></svg></div>
-              <h3>Speed</h3>
-              <p>Fast-acting cleaning helps reduce operational downtime and gets your surfaces ready for what comes next.</p>
-            </article>
-            <article class="card benefit-card">
-              <span class="card-number">03</span>
-              <div class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-leaf" /></svg></div>
-              <h3>Sustainability</h3>
-              <p>A chemical-free process avoids harsh cleaning products and abrasive media for a cleaner working environment.</p>
-            </article>
-          </div>
+          <ol class="steps">
+            <li class="card step">
+              <span class="step-number" aria-hidden="true">01</span>
+              <h3>Send photos and details</h3>
+              <p>WhatsApp, email or use the quote form. Include photos, rough measurements and your location.</p>
+            </li>
+            <li class="card step">
+              <span class="step-number" aria-hidden="true">02</span>
+              <h3>Free assessment and quote</h3>
+              <p>We assess the job from your photos, or do a test patch, then quote on surface area and coating thickness.</p>
+            </li>
+            <li class="card step">
+              <span class="step-number" aria-hidden="true">03</span>
+              <h3>On-site cleaning</h3>
+              <p>Tiaan brings everything needed to your site and does the work. No chemicals, no blasting media.</p>
+            </li>
+            <li class="card step">
+              <span class="step-number" aria-hidden="true">04</span>
+              <h3>Handover</h3>
+              <p>We check the result with you. The surface is clean and ready for paint, coating or welding.</p>
+            </li>
+          </ol>
         </div>
       </section>
 
-      <section class="industries section section--deep" id="industries">
+      <!-- 7. Industries -->
+      <section class="section section--deep" id="industries" aria-labelledby="industries-title">
         <div class="container industries-layout">
           <div class="industries-heading">
-            <p class="eyebrow">Built for demanding work</p>
-            <h2>One precise process.<br /><em>Many industries.</em></h2>
-            <p>From individual components to heavy equipment, we bring mobile laser cleaning to the job site.</p>
-            <a class="inline-link" href="#contact">Talk to us about your project <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            <p class="eyebrow">Industries we help</p>
+            <h2 id="industries-title">Wherever metal rusts, scales or needs recoating</h2>
+            <p>From a single component to a full structure, laser cleaning fits any sector that maintains metal equipment.</p>
           </div>
-          <div class="industry-list">
-            <span class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V9l6 3V8l6 4V5h6v16H3Z"/><path d="M7 16h2m3 0h2m3-7h2"/></svg>Industrial</span>
-            <span class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 14 2-5h12l4 5v5H3v-5Z"/><path d="M7 9l2-4h6l2 4M3 14h18"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg>Automotive</span>
-            <span class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 4 6 6M5 20l10-10m-8 7-3-3m9-9 3-3 4 4-3 3"/></svg>Mining</span>
-            <span class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 14 20-7-6 7 4 4-8-2-5 5 1-6-6-1Z"/></svg>Aerospace</span>
-            <span class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-13a7 7 0 1 0-14 0c0 6.8 7 13 7 13Z"/><path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>Oil &amp; gas</span>
-            <span class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h18l-3 4H7l-4-4Z"/><path d="M6 17V9h8l4 8M8 9V5h5v4m-2 0v4m-5 4h10"/></svg>Marine</span>
-            <span class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 17 7m-3-3 6 6m-2-8 4 4M3 21l4-1-3-3-1 4Z"/></svg>Fabrication &amp; machine tooling</span>
-            <span class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.7 2.9-.2-.1a1.7 1.7 0 0 0-1.8.4l-.1.1h-3.4l-.1-.2a1.7 1.7 0 0 0-1.7-1l-.2.1-2.9-1.7.1-.2a1.7 1.7 0 0 0-.4-1.8l-.1-.1v-3.4l.2-.1a1.7 1.7 0 0 0 1-1.7l-.1-.2 1.7-2.9.2.1a1.7 1.7 0 0 0 1.8-.4l.1-.1h3.4l.1.2a1.7 1.7 0 0 0 1.7 1l.2-.1 2.9 1.7-.1.2a1.7 1.7 0 0 0 .4 1.8l.1.1v3.4l-.2.1a1.7 1.7 0 0 0-.3 1.7Z"/></svg>Engineering</span>
-            <span class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h11V9H7l-4 4v4Zm11 0h4l3-4-3-4h-4"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M8 9V5h5v4m-9 4h4"/></svg>Farming</span>
-            <span class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M6 21V6h12v15M4 6h16M8 3h8M9 10h6m-6 4h6"/><path d="m3 6 3-3m15 3-3-3"/></svg>Construction</span>
+          <ul class="industry-list">
+            <li class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 14 2-5h12l4 5v5H3v-5Z"/><path d="M7 9l2-4h6l2 4M3 14h18"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg><div><strong>Automotive</strong><span>Chassis, frames and parts</span></div></li>
+            <li class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15h4l2-4h6l2 4h4v4H3Z"/><circle cx="7" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/><path d="M9 7h6M12 4v3"/></svg><div><strong>Vehicle restoration</strong><span>Rust and paint off bodies and parts</span></div></li>
+            <li class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 7h13v9H2zM15 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.75"/><circle cx="18" cy="17.5" r="1.75"/></svg><div><strong>Transport and trailers</strong><span>Trailers, truck bodies and chassis</span></div></li>
+            <li class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 4 6 6M5 20l10-10m-8 7-3-3m9-9 3-3 4 4-3 3"/></svg><div><strong>Mining</strong><span>Rust and grime on heavy equipment</span></div></li>
+            <li class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h18l-3 4H7l-4-4Z"/><path d="M6 17V9h8l4 8M8 9V5h5v4m-2 0v4m-5 4h10"/></svg><div><strong>Marine</strong><span>Corrosion on hulls, fittings and hardware</span></div></li>
+            <li class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M6 21V6h12v15M4 6h16M8 3h8M9 10h6m-6 4h6"/><path d="m3 6 3-3m15 3-3-3"/></svg><div><strong>Construction</strong><span>Structural steel and plant</span></div></li>
+            <li class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 17 7m-3-3 6 6m-2-8 4 4M3 21l4-1-3-3-1 4Z"/></svg><div><strong>Fabrication and machine tooling</strong><span>Mill scale, weld tint and pre-weld prep</span></div></li>
+            <li class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8v8H8z"/><path d="M4 12h4m8 0h4"/></svg><div><strong>Manufacturing and moulds</strong><span>Moulds cleaned in service, production equipment</span></div></li>
+            <li class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.7 2.9-.2-.1a1.7 1.7 0 0 0-1.8.4l-.1.1h-3.4l-.1-.2a1.7 1.7 0 0 0-1.7-1l-.2.1-2.9-1.7.1-.2a1.7 1.7 0 0 0-.4-1.8l-.1-.1v-3.4l.2-.1a1.7 1.7 0 0 0 1-1.7l-.1-.2 1.7-2.9.2.1a1.7 1.7 0 0 0 1.8-.4l.1-.1h3.4l.1.2a1.7 1.7 0 0 0 1.7 1l.2-.1 2.9 1.7-.1.2a1.7 1.7 0 0 0 .4 1.8l.1.1v3.4l-.2.1a1.7 1.7 0 0 0-.3 1.7Z"/></svg><div><strong>Engineering</strong><span>Components and assemblies before coating</span></div></li>
+            <li class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V9l6 3V8l6 4V5h6v16H3Z"/><path d="M7 16h2m3 0h2m3-7h2"/></svg><div><strong>Industrial plant</strong><span>Structures, tanks and machinery</span></div></li>
+            <li class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-13a7 7 0 1 0-14 0c0 6.8 7 13 7 13Z"/><path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg><div><strong>Oil and gas</strong><span>Pipework, valves, tanks and fittings</span></div></li>
+            <li class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h11V9H7l-4 4v4Zm11 0h4l3-4-3-4h-4"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M8 9V5h5v4m-9 4h4"/></svg><div><strong>Farming</strong><span>Implements, tractors and trailers</span></div></li>
+            <li class="industry-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 14 20-7-6 7 4 4-8-2-5 5 1-6-6-1Z"/></svg><div><strong>Aerospace</strong><span>Tooling and ground equipment, on assessment</span></div></li>
+            <li class="industry-item industry-item--ask"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5V14M12 17h.01"/></svg><div><strong>Not listed?</strong><span>If it's metal, <a href="#contact">ask us</a></span></div></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 8. About -->
+      <section class="section section--surface" id="about" aria-labelledby="about-title">
+        <div class="container about-layout">
+          <div class="about-copy">
+            <p class="eyebrow">About ALSR</p>
+            <h2 id="about-title">A small Gauteng team that does the work itself</h2>
+            <p>
+              Advanced Laser Surface Restoration (ALSR) was founded in 2026 in Kempton Park to bring
+              laser cleaning to workshops, plants and sites across Gauteng. The service is fully mobile:
+              we come to you, so your equipment stays where it is.
+            </p>
+            <p>
+              You deal directly with the people who quote and do your job. There's no call centre and
+              no handover to a subcontractor.
+            </p>
+            <!-- TODO client: certifications, safety training or insurance can be added here once confirmed (REDESIGN_PLAN §5.4). -->
+            <p class="values-note">
+              <svg class="icon" aria-hidden="true"><use href="#i-book" /></svg>
+              <span>ALSR is built on faith. Isaiah 41:10 is the verse behind the business.</span>
+            </p>
+          </div>
+          <div class="people">
+            <article class="card person-card">
+              <div class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-user" /></svg></div>
+              <h3>Tiaan</h3>
+              <p class="person-role">Owner and laser technician</p>
+              <p>Assesses and carries out every job on site, from the first test patch to handover.</p>
+              <ul class="person-links">
+                <li><a href="tel:+27826141820"><svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg>082 614 1820</a></li>
+                <li><a href="https://wa.me/27826141820" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp" /></svg>WhatsApp</a></li>
+              </ul>
+            </article>
+            <article class="card person-card">
+              <div class="card-icon" aria-hidden="true"><svg class="icon"><use href="#i-clipboard" /></svg></div>
+              <h3>Anne-Marie</h3>
+              <p class="person-role">Quotes, invoices and enquiries</p>
+              <p>Handles your quote, paperwork and scheduling questions.</p>
+              <ul class="person-links">
+                <li><a href="mailto:sales.alsr@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>sales.alsr@gmail.com</a></li>
+              </ul>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="gallery section section--surface" id="gallery">
-        <div class="container">
-          <div class="gallery-heading">
-            <div class="section-heading">
-              <p class="eyebrow">Real work. Restored surfaces.</p>
-              <h2>See laser cleaning <em>in action.</em></h2>
-            </div>
-            <div class="gallery-actions">
-              <a class="inline-link" href="gallery.html">View project gallery <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
-              <a class="inline-link" href="videos.html">Watch our videos <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
-            </div>
+      <!-- 9. FAQ -->
+      <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+        <div class="container faq-layout">
+          <div class="section-heading faq-heading">
+            <p class="eyebrow">FAQ</p>
+            <h2 id="faq-title">Questions buyers ask us</h2>
+            <p class="lead">Still unsure? Send photos and we'll tell you honestly whether laser cleaning suits the job.</p>
           </div>
-          <div class="gallery-grid">
-            <figure class="gallery-card">
-              <img
-                src="assets/images/StructureBefore_result.webp"
-                alt="Rust removal project using laser surface restoration"
-                loading="lazy"
-              />
-              <figcaption><span>Rust removal</span><strong>Bringing metal back to life</strong></figcaption>
-            </figure>
-            <figure class="gallery-card">
-              <img
-                src="assets/images/Facebook PFP_result.webp"
-                alt="Advanced Laser Surface Restoration project image"
-                loading="lazy"
-              />
-              <figcaption><span>Surface restoration</span><strong>Precision at every pass</strong></figcaption>
-            </figure>
+          <div class="faq">
+            <details id="faq-fit" open>
+              <summary>Is laser cleaning right for my job?</summary>
+              <div class="faq-body">
+                <p>It suits most rust, paint, scale and residue on medium and large metal surfaces: vehicle chassis and parts, machinery, structural steel, trailers, tanks, moulds in service, and marine and mining equipment. A few cases need a closer look:</p>
+                <ul>
+                  <li><strong>Very thin sheet metal and delicate or precision parts</strong> can be affected by heat, so we assess these first and will tell you if laser cleaning isn't the right choice.</li>
+                  <li><strong>Very thick or built-up coatings</strong> take longer, so we quote them after an assessment.</li>
+                  <li><strong>Glass and highly reflective or polished surfaces</strong> are assessed case by case.</li>
+                  <li><strong>Plastics, rubber, composites, wood, electronics and heat-sensitive parts</strong> aren't suited to laser cleaning, and we'll point you elsewhere.</li>
+                </ul>
+                <p>Not sure? We offer a free photo assessment or test patch.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Which areas do you cover, and is there a call-out fee?</summary>
+              <div class="faq-body">
+                <p>We're based in Kempton Park and work across Gauteng and surrounding areas, with no call-out fee in Gauteng. We also travel nationwide for larger jobs. Outside Gauteng, a distance-based call-out fee may apply, and we'll include it in your quote.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Why don't you publish prices?</summary>
+              <div class="faq-body">
+                <p>Every job is different. The price depends on the measured surface area and on how thick the rust, paint or contaminant is. Rather than give you a rough number that changes later, we quote each job properly from your photos or a test patch.</p>
+              </div>
+            </details>
+            <details>
+              <summary>What should I send for a quote?</summary>
+              <div class="faq-body">
+                <ul>
+                  <li>Photos of the surface: one wide shot and a few close-ups</li>
+                  <li>Approximate size or area to be cleaned</li>
+                  <li>The material, if you know it, and what needs removing</li>
+                  <li>Where the job is and when you need it done</li>
+                </ul>
+                <p>WhatsApp them to 082 614 1820, email them, or use the quote form below.</p>
+              </div>
+            </details>
+            <details>
+              <summary>What do you need from us on site?</summary>
+              <div class="faq-body">
+                <p>Safe, clear access to the surface being cleaned. We'll confirm the exact requirements for your site when we quote.</p>
+                <!-- TODO client: confirm on-site requirements (e.g. power supply, space, PPE, exclusion zone, site induction). -->
+                <p class="placeholder">[[CLIENT: on-site requirements, e.g. power supply, work-area clearance, PPE and site induction]]</p>
+              </div>
+            </details>
+            <details>
+              <summary>What is the surface like after cleaning?</summary>
+              <div class="faq-body">
+                <p>Clean and lightly textured, which helps new paint and coatings adhere. It's ready for painting, coating or welding. Bare steel starts to rust again when exposed to moisture, so plan to prime or coat it soon after cleaning.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Which materials can you clean?</summary>
+              <div class="faq-body">
+                <p>Steel, stainless steel, cast iron, aluminium, copper and brass, and titanium. Some stone and concrete can be cleaned too, after an assessment.</p>
+              </div>
+            </details>
           </div>
         </div>
       </section>
 
-      <section class="contact section section--alt" id="contact">
+      <!-- 10. Contact -->
+      <section class="section section--surface" id="contact" aria-labelledby="contact-title">
         <div class="container contact-layout">
           <div class="contact-copy">
-            <p class="eyebrow">Call us · On-site assessment · Laser cleaning</p>
-            <h2>Ready to restore<br /><em>your surface?</em></h2>
-            <p>Tell us what you need cleaned. Our team can help you explore the right approach and request a detailed service quote.</p>
-            <a class="button" href="mailto:sales.alsr@gmail.com?subject=Laser%20cleaning%20inquiry">Get a quote</a>
+            <p class="eyebrow">Get a quote</p>
+            <h2 id="contact-title">Tell us about the job</h2>
+            <p class="lead">Send the details and we'll come back to you with questions or a quote. Not sure laser cleaning suits it? Send photos for a free assessment or test patch.</p>
+
+            <h3 class="checklist-title">What to send</h3>
+            <ul class="checklist">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Photos: one wide, a few close-ups</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Rough size or area</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Material and what needs removing</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Site location and timing</li>
+            </ul>
+
+            <div class="contact-details">
+              <div class="contact-person">
+                <span class="contact-label">Tiaan · owner and technician</span>
+                <a href="tel:+27826141820"><svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg>082 614 1820</a>
+                <a href="https://wa.me/27826141820" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp" /></svg>WhatsApp photos</a>
+                <a href="mailto:tiaan.alsr@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>tiaan.alsr@gmail.com</a>
+              </div>
+              <div class="contact-person">
+                <span class="contact-label">Anne-Marie · quotes and enquiries</span>
+                <a href="mailto:sales.alsr@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>sales.alsr@gmail.com</a>
+              </div>
+              <p class="service-area"><svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>Kempton Park. Gauteng and surrounding areas, nationwide for larger jobs.</p>
+            </div>
           </div>
-          <div class="contact-details">
-            <h3>Get in touch</h3>
-            <div class="contact-person">
-              <span class="contact-label">Sales enquiries</span>
-              <a href="mailto:sales.alsr@gmail.com">sales.alsr@gmail.com</a>
-              <span>Anne-Marie</span>
-            </div>
-            <div class="contact-person">
-              <span class="contact-label">Sales enquiries</span>
-              <a href="mailto:tiaan.alsr@gmail.com">tiaan.alsr@gmail.com</a>
-              <span>Tiaan</span>
-            </div>
-            <div class="contact-person">
-              <span class="contact-label">Call Tiaan</span>
-              <a href="tel:+27826141820">+27 82 614 1820</a>
-            </div>
-            <p class="service-area">Fully mobile service across Gauteng and surrounding areas. We come directly to your site.</p>
+
+          <div class="card form-card">
+            <form class="form" action="https://api.web3forms.com/submit" method="POST" data-quote-form>
+              <!-- Web3Forms: key is created with Tiaan's inbox (primary recipient). Anne-Marie via CC (if the plan allows) or Gmail forward. -->
+              <input type="hidden" name="access_key" value="[[CLIENT: WEB3FORMS_ACCESS_KEY]]" />
+              <input type="hidden" name="subject" value="New quote request from alsr-sa.com" />
+              <input type="hidden" name="from_name" value="ALSR website" />
+              <div class="hp-field" aria-hidden="true">
+                <label for="botcheck">Leave this empty</label>
+                <input type="checkbox" name="botcheck" id="botcheck" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="f-name">Name <span aria-hidden="true">*</span></label>
+                  <input id="f-name" name="name" type="text" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label for="f-company">Company</label>
+                  <input id="f-company" name="company" type="text" autocomplete="organization" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="f-phone">Phone <span aria-hidden="true">*</span></label>
+                  <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+                </div>
+                <div class="field">
+                  <label for="f-email">Email</label>
+                  <input id="f-email" name="email" type="email" autocomplete="email" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="f-location">Job location <span aria-hidden="true">*</span></label>
+                  <input id="f-location" name="location" type="text" placeholder="e.g. Kempton Park" required />
+                </div>
+                <div class="field">
+                  <label for="f-job">Type of job</label>
+                  <select id="f-job" name="job_type">
+                    <option value="">Choose one</option>
+                    <option>Rust and corrosion removal</option>
+                    <option>Paint and coating stripping</option>
+                    <option>Oxide, mill scale or weld discolouration</option>
+                    <option>Oil, grease or carbon residue</option>
+                    <option>Surface prep for paint, coating or welding</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="f-message">About the job <span aria-hidden="true">*</span></label>
+                <textarea id="f-message" name="message" required aria-describedby="f-message-hint"></textarea>
+                <span class="hint" id="f-message-hint">What it is, the material, rough size and when you need it done.</span>
+              </div>
+              <div class="field">
+                <label for="f-photos">Link to photos</label>
+                <input id="f-photos" name="photo_link" type="url" placeholder="https://" aria-describedby="f-photos-hint" />
+                <span class="hint" id="f-photos-hint">A Google Drive, Dropbox or WeTransfer link. Or WhatsApp photos to 082 614 1820.</span>
+              </div>
+
+              <p class="form-required"><span aria-hidden="true">*</span> Required</p>
+              <button class="button form-submit" type="submit">Send quote request</button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+              <p class="form-note">
+                Your details are used by ALSR / Advanced Laser Surface Restoration only to respond to this
+                enquiry, in line with POPIA.
+                Prefer email? <a href="mailto:tiaan.alsr@gmail.com,sales.alsr@gmail.com?subject=Quote%20request">Email Tiaan and Anne-Marie</a>.
+              </p>
+            </form>
           </div>
         </div>
       </section>
     </main>
+
 
     <!-- footer:start -->
     <footer class="site-footer">

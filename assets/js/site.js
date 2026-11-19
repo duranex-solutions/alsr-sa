@@ -1,4 +1,4 @@
-/* ALSR site script: mobile nav, nav scroll-spy (home), one-shot reveal, footer year.
+/* ALSR site script: mobile nav, nav scroll-spy (home), one-shot reveal, quote form, footer year.
    Progressive enhancement only: every page works with JS off. */
 (() => {
   "use strict";
@@ -87,6 +87,60 @@
     targets.forEach((target) => {
       target.classList.add("reveal");
       observer.observe(target);
+    });
+  }
+
+  /* ---- Quote form (Web3Forms). Without JS the form posts normally to Web3Forms. ---- */
+  const form = document.querySelector("[data-quote-form]");
+  if (form && "fetch" in window) {
+    const status = form.querySelector(".form-status");
+    const submit = form.querySelector("[type='submit']");
+    const submitLabel = submit ? submit.textContent : "";
+    const fallback =
+      'Please email <a href="mailto:tiaan.alsr@gmail.com,sales.alsr@gmail.com?subject=Quote%20request">Tiaan and Anne-Marie</a> ' +
+      'or WhatsApp <a href="https://wa.me/27826141820" target="_blank" rel="noopener noreferrer">082 614 1820</a> instead.';
+
+    const setStatus = (type, html) => {
+      status.classList.toggle("is-ok", type === "ok");
+      status.classList.toggle("is-error", type === "error");
+      status.innerHTML = html;
+    };
+
+    // Flag invalid fields for assistive tech; clear the flag once the visitor edits them
+    form.addEventListener("invalid", (event) => event.target.setAttribute("aria-invalid", "true"), true);
+    form.addEventListener("input", (event) => {
+      if (event.target.validity && event.target.validity.valid) event.target.removeAttribute("aria-invalid");
+    });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const key = form.elements.access_key ? form.elements.access_key.value : "";
+      if (!key || key.includes("[[")) {
+        setStatus("error", "The online form isn't connected yet. " + fallback);
+        return;
+      }
+
+      submit.disabled = true;
+      submit.textContent = "Sending…";
+      setStatus("", "");
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(form),
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || !result.success) throw new Error(result.message || "Request failed");
+        form.reset();
+        setStatus("ok", "Thanks, your quote request has been sent. We'll be in touch soon.");
+      } catch (error) {
+        setStatus("error", "Sorry, your request couldn't be sent. " + fallback);
+      } finally {
+        submit.disabled = false;
+        submit.textContent = submitLabel;
+      }
     });
   }
 
