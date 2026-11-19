@@ -5,7 +5,7 @@ Keep the dark + orange feel. Re-read §0 before writing any copy.
 
 ## 0. Hard rules and confirmed facts
 **Hard rules**
-- **Equipment confidentiality:** never mention the laser's brand, model, manufacturer, wattage or wavelength. That covers copy, alt text, filenames, meta, schema and comments. The most specific wording allowed is "industrial-grade fibre laser". Describe capability, not equipment. Never show the machine/unit. No image may show a readable machine label.
+- **Equipment confidentiality:** never mention the laser's brand, model, manufacturer, wattage or wavelength. That covers copy, alt text, filenames, meta, schema and comments. The most specific wording allowed is "industrial-grade fibre laser". Describe capability, not equipment. Don't show the machine/unit in site images, **except the hero image and YouTube videos (client override, 2026-11-19)**. No site image may show a readable machine label.
 - Never invent facts (stats, testimonials, certifications, logos, years, response times). Use visible `[[CLIENT: …]]` placeholders, or leave the section out.
 - No cleaning-speed or max-thickness numbers. If a section needs one, use `[[CLIENT: TODO …]]`.
 - SA/UK English (aluminium, colour, fibre). Brand: "Advanced Laser Surface Restoration (ALSR)", then "ALSR". Service term: "laser cleaning".
@@ -225,13 +225,13 @@ All answered or parked by the client (2026-11). Answers live in §0. Build **no*
 - [x] Videos: all 6 existing IDs verified via YouTube oEmbed; channel listing fetched; 5 new videos added; facades with posters; follow-us row; CTA band
 - [x] Images: 800 w and 1600 w WebP (portrait pair 600/1200), `srcset`/`sizes`, `width`/`height`, lazy everywhere except the hero (`fetchpriority="high"`). All 1600 w files are under 350 KB, 800 w under 150 KB
 - [x] Kebab-case renames under `assets/img/work/`; `assets/img/brand/og-image.jpg` (1200×630); posters in `assets/img/video-posters/`
-- [x] Unused media removed from the deploy: originals, `_result`/`_gallery` webps and the MP4s moved to `../ALSR Laser Cleaning - media archive/` (also still in git history)
+- [x] Unused media removed from the deploy: originals, `_result`/`_gallery` webps and the MP4s moved to `../ALSR Laser Cleaning - media archive/` (also still in git history). `HeroImage.jpg` is archived too; the client now allows it as the hero, not yet swapped in
 - [x] 404.html: self-contained inline CSS, absolute `https://alsr-sa.com/` links
 - Files: gallery.html, videos.html, 404.html, index.html (img refs), assets/img/**, assets/css/site.css, assets/js/site.js, partials/header.html (icons)
 - **Phase 4 notes:**
   - Gallery: 3 sections (#rust 6 pairs, #paint 2, #contaminants 1), 18 photos. Each photo is an `<a class="lightbox-link" data-lightbox href=1600w>` so it opens the large file without JS. `site.js` builds one `<dialog class="lightbox">`: focus moves to Close, Esc/backdrop click closes, ←/→/Home/End, swipe, prev/next buttons, counter, focus returns to the last photo viewed, neighbours preloaded. Titles are "object · what was removed" using only what the photos show. HTML `TODO client` comments mark unknowns (material of "large-sheet": old filename said aluminium but it looks like rusted steel; `steel-plate` and `steel-plate-portrait` look like the same plate).
   - Videos: 11 videos in 3 groups (paint 4, rust 5, residue 2). All are YouTube Shorts (9:16). Facade is `<a class="video-facade" href=youtube.com/shorts/ID data-video-id>` with a local poster; `site.js` swaps in a `youtube-nocookie.com` iframe (autoplay) on click and gives it focus. No YouTube request happens before the click. Excluded: `g10ue2Jmhpc` ("04 September 2026"), a promo graphic.
-  - Posters: YouTube thumbnails cropped to 9:16, except three videos whose frames show the handpiece/label (vehicle panel, steel sheet, engine part): those use our own photos or a cropped safe region. The video footage itself still shows the equipment on YouTube; that is the client's channel content.
+  - Posters: YouTube thumbnails cropped to 9:16. After the 2026-11-19 client override (equipment allowed in hero + videos) all posters are the real video frames. Duplicate portrait steel-plate pair dropped, so the gallery has 5 rust pairs (8 pairs, 16 photos).
   - Home showcase and hero now use the new `assets/img/work/` files with srcset/width/height. New sprite icons: `i-zoom`, `i-chevron-left`, `i-chevron-right`.
   - Checked in headless Chrome at 1280 and 360: no horizontal overflow, no console errors, lightbox keyboard flow and facade click verified.
   - Meta titles/descriptions, og:image tags and JSON-LD are Phase 5. `og-image.jpg` exists but is not yet referenced.

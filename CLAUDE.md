@@ -6,7 +6,7 @@
 - Run locally from the root: `npx serve .` or `python -m http.server 8000`.
 - **Read REDESIGN_PLAN.md (§0 rules and facts first) before working.** Tick phase checkboxes as tasks complete.
 - Don't open image/video files unless the task needs it. Use filenames and sizes.
-- **Never** name the laser's brand, model, manufacturer, wattage or wavelength anywhere (copy, alt, filenames, meta, schema). Max: "industrial-grade fibre laser". Never show the machine.
+- **Never** name the laser's brand, model, manufacturer, wattage or wavelength anywhere (copy, alt, filenames, meta, schema). Max: "industrial-grade fibre laser". Exception (client, 2026-11-19): the machine may appear in the hero image and in YouTube videos. Elsewhere on the site, don't show it.
 - Never invent client facts (prices, stats, testimonials, certifications). Use `[[CLIENT: …]]` placeholders.
 - SA/UK English. Brand "Advanced Laser Surface Restoration (ALSR)". Service term "laser cleaning".
 - Keep the dark + orange (#f07824) look. Use tokens in assets/css/site.css, no hard-coded colours.
