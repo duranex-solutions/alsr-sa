@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#111214" />
+    <title>Page not found | ALSR</title>
+    <link rel="icon" href="https://alsr-sa.com/favicon.ico" />
+    <!-- Self-contained on purpose: a 404 can be served from any URL depth, so it uses inline CSS and absolute links only. -->
+    <style>
+      :root {
+        --bg: #111214;
+        --surface: #1b1d20;
+        --line: #44464a;
+        --text: #f3f3f1;
+        --muted: #b2b5b8;
+        --accent: #f07824;
+        --accent-hover: #ff9148;
+        --accent-light: #ffad66;
+        --on-accent: #111214;
+      }
+      * { box-sizing: border-box; }
+      body {
+        display: grid;
+        min-height: 100vh;
+        margin: 0;
+        padding: 24px 16px;
+        place-items: center;
+        background: radial-gradient(ellipse at 0% 0%, #34251c, transparent 55%), var(--bg);
+        color: var(--text);
+        font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.65;
+      }
+      main {
+        width: min(560px, 100%);
+        padding: 40px 32px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--surface);
+      }
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--accent-light);
+        font-size: 0.8125rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0 0 16px;
+        font-size: clamp(2rem, 6vw, 2.75rem);
+        line-height: 1.1;
+        letter-spacing: -0.035em;
+      }
+      p { margin: 0 0 24px; color: var(--muted); }
+      .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+      a.button {
+        display: inline-flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 0 24px;
+        border: 1px solid var(--accent);
+        border-radius: 4px;
+        background: var(--accent);
+        color: var(--on-accent);
+        font-weight: 700;
+        text-decoration: none;
+      }
+      a.button:hover { border-color: var(--accent-hover); background: var(--accent-hover); }
+      a.button--ghost { background: transparent; color: var(--text); border-color: var(--line); }
+      a.button--ghost:hover { border-color: var(--accent); background: transparent; color: var(--accent-light); }
+      a:focus-visible { outline: 3px solid var(--accent-light); outline-offset: 3px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Error 404</p>
+      <h1>We couldn't find that page</h1>
+      <p>The link may be old or mistyped. Head back to the home page, see our work, or send us photos of your job for a free assessment.</p>
+      <div class="actions">
+        <a class="button" href="https://alsr-sa.com/">Back to home</a>
+        <a class="button button--ghost" href="https://alsr-sa.com/gallery.html">See our work</a>
+        <a class="button button--ghost" href="https://alsr-sa.com/#contact">Get a quote</a>
+      </div>
+    </main>
+  </body>
+</html>

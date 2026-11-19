@@ -144,6 +144,118 @@
     });
   }
 
+  /* ---- Lightbox: links with [data-lightbox] open in a native <dialog>.
+          Without JS they simply open the large image. ---- */
+  const lightboxLinks = Array.from(document.querySelectorAll("a[data-lightbox]"));
+  if (lightboxLinks.length && "HTMLDialogElement" in window) {
+    const icon = (name) => `<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
+    const dialog = document.createElement("dialog");
+    dialog.className = "lightbox";
+    dialog.setAttribute("aria-label", "Photo viewer");
+    dialog.innerHTML =
+      '<button class="lightbox-button lightbox-close" type="button" aria-label="Close photo viewer">' + icon("close") + "</button>" +
+      '<figure class="lightbox-figure"><img alt="" /></figure>' +
+      '<div class="lightbox-bar">' +
+      '<button class="lightbox-button lightbox-prev" type="button" aria-label="Previous photo">' + icon("chevron-left") + "</button>" +
+      '<p class="lightbox-caption" aria-live="polite"><span class="lightbox-text"></span><span class="lightbox-count"></span></p>' +
+      '<button class="lightbox-button lightbox-next" type="button" aria-label="Next photo">' + icon("chevron-right") + "</button>" +
+      "</div>";
+    document.body.append(dialog);
+
+    const image = dialog.querySelector("img");
+    const text = dialog.querySelector(".lightbox-text");
+    const count = dialog.querySelector(".lightbox-count");
+    const closeButton = dialog.querySelector(".lightbox-close");
+    const prevButton = dialog.querySelector(".lightbox-prev");
+    const nextButton = dialog.querySelector(".lightbox-next");
+    let index = 0;
+
+    const preload = (i) => {
+      const link = lightboxLinks[(i + lightboxLinks.length) % lightboxLinks.length];
+      new Image().src = link.href;
+    };
+
+    const show = (i) => {
+      index = (i + lightboxLinks.length) % lightboxLinks.length;
+      const link = lightboxLinks[index];
+      const thumb = link.querySelector("img");
+      image.src = link.href;
+      image.alt = thumb ? thumb.alt : "";
+      text.textContent = link.dataset.caption || "";
+      count.textContent = `Photo ${index + 1} of ${lightboxLinks.length}`;
+      preload(index + 1);
+      preload(index - 1);
+    };
+
+    const step = (by) => show(index + by);
+    if (lightboxLinks.length < 2) prevButton.hidden = nextButton.hidden = true;
+
+    lightboxLinks.forEach((link, i) => {
+      link.addEventListener("click", (event) => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey) return; // let "open in new tab" work
+        event.preventDefault();
+        show(i);
+        dialog.showModal();
+        closeButton.focus();
+      });
+    });
+
+    closeButton.addEventListener("click", () => dialog.close());
+    prevButton.addEventListener("click", () => step(-1));
+    nextButton.addEventListener("click", () => step(1));
+
+    // Click on the dark area (outside the photo and controls) closes the viewer
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog || event.target.classList.contains("lightbox-figure")) dialog.close();
+    });
+
+    dialog.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") { event.preventDefault(); step(-1); }
+      else if (event.key === "ArrowRight") { event.preventDefault(); step(1); }
+      else if (event.key === "Home") { event.preventDefault(); show(0); }
+      else if (event.key === "End") { event.preventDefault(); show(lightboxLinks.length - 1); }
+    });
+
+    // Swipe on touch screens
+    let touchX = null;
+    dialog.addEventListener("touchstart", (event) => { touchX = event.touches[0].clientX; }, { passive: true });
+    dialog.addEventListener("touchend", (event) => {
+      if (touchX === null) return;
+      const dx = event.changedTouches[0].clientX - touchX;
+      touchX = null;
+      if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+    }, { passive: true });
+
+    // Esc closes natively; hand focus back to the photo that was last viewed
+    dialog.addEventListener("close", () => {
+      image.removeAttribute("src");
+      lightboxLinks[index].focus({ preventScroll: false });
+    });
+  }
+
+  /* ---- YouTube click-to-load facades: the player (privacy-enhanced domain) loads only on click.
+          Without JS the link opens the video on YouTube. ---- */
+  document.querySelectorAll("a.video-facade[data-video-id]").forEach((facade) => {
+    facade.setAttribute("role", "button");
+
+    const load = (event) => {
+      event.preventDefault();
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/${facade.dataset.videoId}?autoplay=1&rel=0&playsinline=1`;
+      iframe.title = facade.dataset.videoTitle || "Video";
+      iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.allowFullscreen = true;
+      facade.replaceWith(iframe);
+      iframe.focus();
+    };
+
+    facade.addEventListener("click", load);
+    facade.addEventListener("keydown", (event) => {
+      if (event.key === " ") load(event); // links activate on Enter; role=button should also take Space
+    });
+  });
+
   /* ---- Footer year ---- */
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = String(new Date().getFullYear());

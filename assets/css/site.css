@@ -1969,9 +1969,44 @@
   }
 
   .comparison-photos img {
+    display: block;
     width: 100%;
-    aspect-ratio: 1.18;
+    height: auto;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
+  }
+
+  .comparison-photos--portrait img {
+    aspect-ratio: 3 / 4;
+  }
+
+  /* Image link that opens the lightbox (opens the large file directly without JS) */
+  .lightbox-link {
+    position: relative;
+    display: block;
+    cursor: zoom-in;
+  }
+
+  .zoom-hint {
+    position: absolute;
+    right: var(--sp-2);
+    bottom: var(--sp-2);
+    display: grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    border-radius: var(--radius-sm);
+    background: rgb(8 9 10 / 72%);
+    color: var(--text);
+    opacity: 0.85;
+    transition: opacity 160ms ease, background-color 160ms ease;
+  }
+
+  .lightbox-link:hover .zoom-hint,
+  .lightbox-link:focus-visible .zoom-hint {
+    background: var(--accent);
+    color: var(--on-accent);
+    opacity: 1;
   }
 
   .comparison-photos figcaption {
@@ -1984,53 +2019,56 @@
     text-transform: uppercase;
   }
 
-  .gallery-video-teaser {
-    padding-block: var(--sp-7);
-  }
-
-  .gallery-video-content {
+  /* Gallery: video teaser */
+  .video-teaser-layout {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: var(--sp-5);
+    gap: var(--sp-6);
   }
 
-  .gallery-video-copy {
-    flex: 1 1 18rem;
+  .video-teaser-copy {
+    flex: 1 1 20rem;
+    max-width: 32rem;
   }
 
-  .gallery-video-copy h2 {
-    margin: 0 0 var(--sp-2);
+  .video-teaser-copy h2 {
+    margin: 0 0 var(--sp-3);
     font-size: var(--fs-xl);
   }
 
-  .gallery-video-copy p:last-child {
-    margin: 0;
+  .video-teaser-copy p:not(.eyebrow) {
+    margin: 0 0 var(--sp-4);
     color: var(--muted);
-    font-size: var(--fs-sm);
   }
 
   .video-teaser-cards {
     display: flex;
-    gap: var(--sp-2);
+    gap: var(--sp-4);
   }
 
   .video-teaser-card {
     position: relative;
     display: block;
     overflow: hidden;
-    width: 72px;
-    height: 72px;
+    width: clamp(120px, 20vw, 168px);
+    aspect-ratio: 9 / 16;
     border: 1px solid var(--line-strong);
     border-radius: var(--radius);
     box-shadow: var(--shadow-md);
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .video-teaser-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--glow);
   }
 
   .video-teaser-card::after {
     position: absolute;
     inset: 0;
-    background: rgb(0 0 0 / 22%);
+    background: linear-gradient(180deg, transparent 45%, rgb(8 9 10 / 88%));
     content: "";
   }
 
@@ -2040,15 +2078,27 @@
     object-fit: cover;
   }
 
-  .video-teaser-card .icon {
+  .video-teaser-label {
     position: absolute;
     z-index: 1;
-    inset: 0;
-    width: 28px;
-    height: 28px;
-    margin: auto;
+    right: var(--sp-3);
+    bottom: var(--sp-3);
+    left: var(--sp-3);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-2);
     color: var(--text);
-    filter: drop-shadow(0 1px 5px rgb(0 0 0 / 90%));
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .video-teaser-label .icon {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
+    color: var(--accent-light);
   }
 
   /* Videos page */
@@ -2062,19 +2112,215 @@
     min-width: 0;
   }
 
+  .video-card h3 {
+    margin: var(--sp-3) 0 var(--sp-1);
+    font-size: var(--fs-base);
+  }
+
+  .video-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--fs-sm);
+  }
+
+  /* Click-to-load YouTube facade: the iframe replaces it on click */
+  .video-facade,
   .video-card iframe {
     display: block;
     width: 100%;
-    aspect-ratio: 0.72;
+    aspect-ratio: 9 / 16;
     border: 1px solid var(--line-strong);
     border-radius: var(--radius);
     background: var(--bg-0);
     box-shadow: var(--shadow-lg), 0 0 0 1px rgb(255 255 255 / 5%);
   }
 
-  .video-card h3 {
+  .video-facade {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .video-facade:hover {
+    border-color: var(--accent);
+    box-shadow: var(--glow);
+  }
+
+  .video-facade img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .video-facade::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(8 9 10 / 10%), rgb(8 9 10 / 45%));
+    content: "";
+    pointer-events: none;
+  }
+
+  .video-play {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    display: grid;
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: var(--shadow-md);
+    color: var(--on-accent);
+    transition: background-color 160ms ease, transform 160ms ease;
+  }
+
+  .video-play .icon {
+    width: 26px;
+    height: 26px;
+    margin-left: 3px;
+  }
+
+  .video-facade:hover .video-play {
+    background: var(--accent-hover);
+    transform: scale(1.06);
+  }
+
+  /* Follow us + CTA band note */
+  .follow-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-5);
+  }
+
+  .follow-layout h2 {
+    margin: 0 0 var(--sp-2);
+    font-size: var(--fs-xl);
+  }
+
+  .follow-layout p:not(.eyebrow) {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .follow-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .band-note {
+    max-width: 36rem;
     margin: var(--sp-3) 0 0;
-    font-size: var(--fs-base);
+    color: var(--muted);
+    font-size: var(--fs-sm);
+  }
+
+  /* Lightbox (native <dialog>, built by site.js) */
+  html:has(.lightbox[open]) {
+    overflow: hidden;
+  }
+
+  .lightbox {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgb(8 9 10 / 94%);
+    color: var(--text);
+  }
+
+  .lightbox[open] {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+
+  .lightbox::backdrop {
+    background: rgb(8 9 10 / 80%);
+  }
+
+  .lightbox-figure {
+    display: grid;
+    min-height: 0;
+    margin: 0;
+    padding: var(--sp-7) var(--sp-4) var(--sp-3);
+    place-items: center;
+  }
+
+  .lightbox-figure img {
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    object-fit: contain;
+  }
+
+  .lightbox-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-4);
+    padding: var(--sp-3) var(--sp-4) var(--sp-5);
+  }
+
+  .lightbox-caption {
+    min-width: 0;
+    max-width: 36rem;
+    margin: 0;
+    color: var(--text-2);
+    font-size: var(--fs-sm);
+    text-align: center;
+  }
+
+  .lightbox-count {
+    display: block;
+    color: var(--muted);
+    font-size: var(--fs-xs);
+  }
+
+  .lightbox-button {
+    display: grid;
+    flex: none;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color 160ms ease, background-color 160ms ease;
+  }
+
+  .lightbox-button:hover {
+    border-color: var(--accent);
+    background: var(--surface-2);
+  }
+
+  .lightbox-button[hidden] {
+    display: none;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: var(--sp-4);
+    right: var(--sp-4);
+  }
+
+  .lightbox-button .icon {
+    width: 22px;
+    height: 22px;
   }
 
   @media (max-width: 1024px) {
@@ -2257,11 +2503,29 @@
     }
 
     .video-grid {
-      gap: var(--sp-3);
+      gap: var(--sp-4) var(--sp-3);
     }
 
     .video-card h3 {
       font-size: var(--fs-sm);
+    }
+
+    .video-card p {
+      display: none;
+    }
+
+    .video-play {
+      width: 52px;
+      height: 52px;
+    }
+
+    .video-teaser-cards {
+      width: 100%;
+    }
+
+    .video-teaser-card {
+      flex: 1 1 0;
+      width: auto;
     }
   }
 

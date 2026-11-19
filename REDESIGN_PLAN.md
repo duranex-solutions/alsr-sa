@@ -220,14 +220,21 @@ All answered or parked by the client (2026-11). Answers live in §0. Build **no*
   - Checked in headless Chrome at 360/768/1280: no horizontal overflow. Meta title/description untouched (Phase 5).
 
 ### Phase 4 Gallery & Videos pages + media optimisation
-- [ ] **Image review (allowed exception):** view each gallery/hero/poster image plus IMG_9656/9658. Flag any readable machine label or visible unit to the user, and crop or drop it.
-- [ ] Gallery: titles, captions, alt text, counts, add IMG_9656/9658 to the steel frame, `<dialog>` lightbox, video teaser, CTA band
-- [ ] Videos: fetch the YouTube channel (@alsr-lazersa) list, verify the 6 IDs (e.g. `0-02E15EF9A`), add any new videos, write descriptive titles; facades with posters; follow-us row; CTA band
-- [ ] Images: 800 w and 1600 w WebP (~q75, <150 KB / <350 KB), `srcset`/`sizes`, `width`/`height`, lazy except the hero (`fetchpriority="high"`)
-- [ ] Kebab-case renames under `assets/img/work/` (no equipment terms); `og-image.jpg`; posters
-- [ ] Remove unused media from the deploy (MP4s archived outside the site); update all refs
-- [ ] 404.html: must work at any depth on GitHub Pages. Self-contained inline CSS, links use absolute `https://alsr-sa.com/` URLs.
-- Files: gallery.html, videos.html, 404.html, index.html (img refs), assets/img/**, assets/css/site.css, assets/js/site.js
+- [x] **Image review (allowed exception):** viewed all gallery photos, IMG_9656/9658, the hero photo and the video thumbnails (contact sheets). No readable machine label in any gallery photo. `HeroImage.jpg` shows the laser handpiece with sparks, so it is **dropped** (archived, not deployed). A new hero image cannot be generated here (see notes).
+- [x] Gallery: titles, captions, alt text, counts, IMG_9656/9658 added, `<dialog>` lightbox, video teaser, CTA band
+- [x] Videos: all 6 existing IDs verified via YouTube oEmbed; channel listing fetched; 5 new videos added; facades with posters; follow-us row; CTA band
+- [x] Images: 800 w and 1600 w WebP (portrait pair 600/1200), `srcset`/`sizes`, `width`/`height`, lazy everywhere except the hero (`fetchpriority="high"`). All 1600 w files are under 350 KB, 800 w under 150 KB
+- [x] Kebab-case renames under `assets/img/work/`; `assets/img/brand/og-image.jpg` (1200×630); posters in `assets/img/video-posters/`
+- [x] Unused media removed from the deploy: originals, `_result`/`_gallery` webps and the MP4s moved to `../ALSR Laser Cleaning - media archive/` (also still in git history)
+- [x] 404.html: self-contained inline CSS, absolute `https://alsr-sa.com/` links
+- Files: gallery.html, videos.html, 404.html, index.html (img refs), assets/img/**, assets/css/site.css, assets/js/site.js, partials/header.html (icons)
+- **Phase 4 notes:**
+  - Gallery: 3 sections (#rust 6 pairs, #paint 2, #contaminants 1), 18 photos. Each photo is an `<a class="lightbox-link" data-lightbox href=1600w>` so it opens the large file without JS. `site.js` builds one `<dialog class="lightbox">`: focus moves to Close, Esc/backdrop click closes, ←/→/Home/End, swipe, prev/next buttons, counter, focus returns to the last photo viewed, neighbours preloaded. Titles are "object · what was removed" using only what the photos show. HTML `TODO client` comments mark unknowns (material of "large-sheet": old filename said aluminium but it looks like rusted steel; `steel-plate` and `steel-plate-portrait` look like the same plate).
+  - Videos: 11 videos in 3 groups (paint 4, rust 5, residue 2). All are YouTube Shorts (9:16). Facade is `<a class="video-facade" href=youtube.com/shorts/ID data-video-id>` with a local poster; `site.js` swaps in a `youtube-nocookie.com` iframe (autoplay) on click and gives it focus. No YouTube request happens before the click. Excluded: `g10ue2Jmhpc` ("04 September 2026"), a promo graphic.
+  - Posters: YouTube thumbnails cropped to 9:16, except three videos whose frames show the handpiece/label (vehicle panel, steel sheet, engine part): those use our own photos or a cropped safe region. The video footage itself still shows the equipment on YouTube; that is the client's channel content.
+  - Home showcase and hero now use the new `assets/img/work/` files with srcset/width/height. New sprite icons: `i-zoom`, `i-chevron-left`, `i-chevron-right`.
+  - Checked in headless Chrome at 1280 and 360: no horizontal overflow, no console errors, lightbox keyboard flow and facade click verified.
+  - Meta titles/descriptions, og:image tags and JSON-LD are Phase 5. `og-image.jpg` exists but is not yet referenced.
 
 ### Phase 5 SEO, accessibility, performance polish
 - [ ] Per-page titles/descriptions, og:image, twitter card, canonicals

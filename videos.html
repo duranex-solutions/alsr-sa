@@ -50,6 +50,9 @@
       <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 3s6 6.500 6 11a6 6 0 0 1-12 0c0-4.500 6-11 6-11Z"/></symbol>
       <symbol id="i-brush" viewBox="0 0 24 24"><path d="M14 4 20 10l-7 7-6-6Z"/><path d="M7 11 4 14c-1 1-1 3 0 4l2 2c1 1 3 1 4 0l3-3"/></symbol>
       <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 11h6M9 15h4"/></symbol>
+      <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.500-4.500M11 8.500v5M8.500 11h5"/></symbol>
+      <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
       <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M13.500 21v-8h2.700l.4-3.200h-3.100V7.800c0-.9.300-1.500 1.600-1.500h1.700V3.400c-.3 0-1.300-.1-2.400-.1-2.400 0-4 1.500-4 4.100v2.400H7.700V13h2.700v8z"/></symbol>
       <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M16.600 3h-3v11.600a2.600 2.600 0 1 1-2.600-2.600c.3 0 .5 0 .8.100V9a5.600 5.600 0 1 0 4.800 5.500V8.600a6.700 6.700 0 0 0 3.900 1.200V6.800A3.900 3.900 0 0 1 16.600 3z"/></symbol>
       <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M21.600 7.200a2.500 2.500 0 0 0-1.800-1.800C18.200 5 12 5 12 5s-6.200 0-7.800.4A2.500 2.500 0 0 0 2.400 7.200C2 8.800 2 12 2 12s0 3.200.4 4.800a2.500 2.500 0 0 0 1.800 1.800C5.800 19 12 19 12 19s6.200 0 7.800-.4a2.500 2.500 0 0 0 1.800-1.800c.4-1.600.4-4.800.4-4.800s0-3.200-.4-4.800zM10 15V9l5.200 3z"/></symbol>
@@ -87,65 +90,170 @@
     <main id="main" tabindex="-1">
       <section class="interior-hero">
         <div class="container interior-hero-content">
-          <p class="eyebrow">Laser cleaning in action</p>
-          <h1>See the process.<br /><em>Watch the results.</em></h1>
-          <p>Real ALSR project videos showing laser cleaning on paint and rust removal jobs.</p>
+          <p class="eyebrow">Our work</p>
+          <h1>Laser cleaning <em>videos</em></h1>
+          <p>Short clips of real jobs, filmed on site. Select a video to play it. It loads from YouTube only when you do.</p>
           <div class="chip-row" aria-label="Video categories">
-            <a class="chip" href="#paint-videos">Paint removal <small>02 videos</small></a>
-            <a class="chip" href="#rust-videos">Rust removal <small>04 videos</small></a>
+            <a class="chip" href="#paint-videos">Paint removal <small>4 videos</small></a>
+            <a class="chip" href="#rust-videos">Rust removal <small>5 videos</small></a>
+            <a class="chip" href="#residue-videos">Contaminants and residue <small>2 videos</small></a>
           </div>
         </div>
       </section>
 
-      <section class="video-section section section--surface" id="paint-videos">
+      <!-- TODO client: titles below are written from each video's thumbnail and YouTube title. Confirm the object and what was removed (e.g. what the wheel was cleaned of). One channel video (g10ue2Jmhpc, "04 September 2026") is a promo graphic, so it is left out. Posters for the vehicle-panel, steel-sheet and engine-part videos are our own photos or a cropped frame, because the video frames show the equipment. -->
+      <section class="video-section section section--surface" id="paint-videos" aria-labelledby="paint-videos-title">
         <div class="container">
           <div class="gallery-section-heading">
-            <div><p class="eyebrow">01 / Watch</p><h2>Paint <em>removal</em></h2></div>
-            <p>See how laser cleaning removes old coatings and prepares surfaces for the next stage.</p>
+            <div>
+              <p class="eyebrow">Paint and coatings</p>
+              <h2 id="paint-videos-title">Paint removal</h2>
+            </div>
+            <p>Old paint and coatings taken off, no chemicals or blasting media.</p>
           </div>
           <div class="video-grid">
             <article class="video-card">
-              <iframe src="https://www.youtube-nocookie.com/embed/NPJ_CHTVBXc" title="Paint removal · Project 1" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              <h3>Paint removal · Project 1</h3>
+              <a class="video-facade" href="https://www.youtube.com/shorts/NPJ_CHTVBXc" data-video-id="NPJ_CHTVBXc" data-video-title="Vehicle panel · paint removed" target="_blank" rel="noopener noreferrer" aria-label="Play video: Vehicle panel · paint removed (opens YouTube)">
+                <img src="assets/img/video-posters/vehicle-panel-paint.webp" width="360" height="640" alt="" loading="lazy" decoding="async" />
+                <span class="video-play" aria-hidden="true"><svg class="icon icon--fill"><use href="#i-play" /></svg></span>
+              </a>
+              <h3>Vehicle panel · paint removed</h3>
+              <p>Yellow paint cleaned off a vehicle panel on site.</p>
             </article>
             <article class="video-card">
-              <iframe src="https://www.youtube-nocookie.com/embed/SJsCALcfobs" title="Paint removal · Project 2" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              <h3>Paint removal · Project 2</h3>
+              <a class="video-facade" href="https://www.youtube.com/shorts/SJsCALcfobs" data-video-id="SJsCALcfobs" data-video-title="Wheel · brought back to life" target="_blank" rel="noopener noreferrer" aria-label="Play video: Wheel · brought back to life (opens YouTube)">
+                <img src="assets/img/video-posters/wheel-restoration.webp" width="360" height="640" alt="" loading="lazy" decoding="async" />
+                <span class="video-play" aria-hidden="true"><svg class="icon icon--fill"><use href="#i-play" /></svg></span>
+              </a>
+              <h3>Wheel · brought back to life</h3>
+              <p>A tyre-mounted alloy wheel cleaned with the laser.</p>
+            </article>
+            <article class="video-card">
+              <a class="video-facade" href="https://www.youtube.com/shorts/LK8BFW0XbEY" data-video-id="LK8BFW0XbEY" data-video-title="Engine block · old paint removed" target="_blank" rel="noopener noreferrer" aria-label="Play video: Engine block · old paint removed (opens YouTube)">
+                <img src="assets/img/video-posters/motor-paint.webp" width="360" height="640" alt="" loading="lazy" decoding="async" />
+                <span class="video-play" aria-hidden="true"><svg class="icon icon--fill"><use href="#i-play" /></svg></span>
+              </a>
+              <h3>Engine block · old paint removed</h3>
+              <p>Red paint lifted off an old engine.</p>
+            </article>
+            <article class="video-card">
+              <a class="video-facade" href="https://www.youtube.com/shorts/wCQgJsel-RE" data-video-id="wCQgJsel-RE" data-video-title="Motorcycle tank cover · paint removed" target="_blank" rel="noopener noreferrer" aria-label="Play video: Motorcycle tank cover · paint removed (opens YouTube)">
+                <img src="assets/img/video-posters/motorcycle-tank-paint.webp" width="360" height="640" alt="" loading="lazy" decoding="async" />
+                <span class="video-play" aria-hidden="true"><svg class="icon icon--fill"><use href="#i-play" /></svg></span>
+              </a>
+              <h3>Motorcycle tank cover · paint removed</h3>
+              <p>Paint stripped from a motorcycle tank cover.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="video-section section section--alt" id="rust-videos">
+      <section class="video-section section section--alt" id="rust-videos" aria-labelledby="rust-videos-title">
         <div class="container">
           <div class="gallery-section-heading">
-            <div><p class="eyebrow">02 / Watch</p><h2>Rust <em>removal</em></h2></div>
-            <p>Watch precision laser cleaning remove corrosion and restore metal surfaces.</p>
+            <div>
+              <p class="eyebrow">Rust and corrosion</p>
+              <h2 id="rust-videos-title">Rust removal</h2>
+            </div>
+            <p>Rust cleared from steel parts and surfaces on site.</p>
           </div>
           <div class="video-grid">
             <article class="video-card">
-              <iframe src="https://www.youtube-nocookie.com/embed/riUMEGuFGpk" title="Rust removal · Project 1" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              <h3>Rust removal · Project 1</h3>
+              <a class="video-facade" href="https://www.youtube.com/shorts/riUMEGuFGpk" data-video-id="riUMEGuFGpk" data-video-title="Engine part · rust removed" target="_blank" rel="noopener noreferrer" aria-label="Play video: Engine part · rust removed (opens YouTube)">
+                <img src="assets/img/video-posters/engine-part-rust.webp" width="360" height="640" alt="" loading="lazy" decoding="async" />
+                <span class="video-play" aria-hidden="true"><svg class="icon icon--fill"><use href="#i-play" /></svg></span>
+              </a>
+              <h3>Engine part · rust removed</h3>
+              <p>A real-time demonstration on a rusted engine part.</p>
             </article>
             <article class="video-card">
-              <iframe src="https://www.youtube-nocookie.com/embed/MDZptdD-J-Y" title="Rust removal · Project 2" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              <h3>Rust removal · Project 2</h3>
+              <a class="video-facade" href="https://www.youtube.com/shorts/MDZptdD-J-Y" data-video-id="MDZptdD-J-Y" data-video-title="Steel fire pit · rust removed" target="_blank" rel="noopener noreferrer" aria-label="Play video: Steel fire pit · rust removed (opens YouTube)">
+                <img src="assets/img/video-posters/fire-pit-rust.webp" width="360" height="640" alt="" loading="lazy" decoding="async" />
+                <span class="video-play" aria-hidden="true"><svg class="icon icon--fill"><use href="#i-play" /></svg></span>
+              </a>
+              <h3>Steel fire pit · rust removed</h3>
+              <p>Rust cleared from a steel fire pit, no chemicals or mess.</p>
             </article>
             <article class="video-card">
-              <iframe src="https://www.youtube-nocookie.com/embed/0-02E15EF9A" title="Rust removal · Project 3" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              <h3>Rust removal · Project 3</h3>
+              <a class="video-facade" href="https://www.youtube.com/shorts/0-02E15EF9A" data-video-id="0-02E15EF9A" data-video-title="Steel sheet · surface rust removed" target="_blank" rel="noopener noreferrer" aria-label="Play video: Steel sheet · surface rust removed (opens YouTube)">
+                <img src="assets/img/video-posters/steel-sheet-rust.webp" width="360" height="640" alt="" loading="lazy" decoding="async" />
+                <span class="video-play" aria-hidden="true"><svg class="icon icon--fill"><use href="#i-play" /></svg></span>
+              </a>
+              <h3>Steel sheet · surface rust removed</h3>
+              <p>Surface rust removed from a large sheet.</p>
             </article>
             <article class="video-card">
-              <iframe src="https://www.youtube-nocookie.com/embed/TJ-EKaUWxis" title="Rust removal · Project 4" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              <h3>Rust removal · Project 4</h3>
+              <a class="video-facade" href="https://www.youtube.com/shorts/TJ-EKaUWxis" data-video-id="TJ-EKaUWxis" data-video-title="Steel panel · surface rust removed" target="_blank" rel="noopener noreferrer" aria-label="Play video: Steel panel · surface rust removed (opens YouTube)">
+                <img src="assets/img/video-posters/steel-panel-rust.webp" width="360" height="640" alt="" loading="lazy" decoding="async" />
+                <span class="video-play" aria-hidden="true"><svg class="icon icon--fill"><use href="#i-play" /></svg></span>
+              </a>
+              <h3>Steel panel · surface rust removed</h3>
+              <p>Surface rust doesn't always need aggressive blasting.</p>
+            </article>
+            <article class="video-card">
+              <a class="video-facade" href="https://www.youtube.com/shorts/2i9pH37T7Js" data-video-id="2i9pH37T7Js" data-video-title="Steel bar · rust and old coating removed" target="_blank" rel="noopener noreferrer" aria-label="Play video: Steel bar · rust and old coating removed (opens YouTube)">
+                <img src="assets/img/video-posters/steel-bar-rust.webp" width="360" height="640" alt="" loading="lazy" decoding="async" />
+                <span class="video-play" aria-hidden="true"><svg class="icon icon--fill"><use href="#i-play" /></svg></span>
+              </a>
+              <h3>Steel bar · rust and old coating removed</h3>
+              <p>Heavy rust and old coating cleaned back to bare metal.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="band">
+      <section class="video-section section section--surface" id="residue-videos" aria-labelledby="residue-videos-title">
+        <div class="container">
+          <div class="gallery-section-heading">
+            <div>
+              <p class="eyebrow">Contaminants and residue</p>
+              <h2 id="residue-videos-title">Contaminant and residue removal</h2>
+            </div>
+            <p>Residue and built-up contamination lifted from tiles and metal.</p>
+          </div>
+          <div class="video-grid">
+            <article class="video-card">
+              <a class="video-facade" href="https://www.youtube.com/shorts/SmVMWbDezFE" data-video-id="SmVMWbDezFE" data-video-title="Floor tiles · construction residue removed" target="_blank" rel="noopener noreferrer" aria-label="Play video: Floor tiles · construction residue removed (opens YouTube)">
+                <img src="assets/img/video-posters/tiled-floor-residue.webp" width="360" height="640" alt="" loading="lazy" decoding="async" />
+                <span class="video-play" aria-hidden="true"><svg class="icon icon--fill"><use href="#i-play" /></svg></span>
+              </a>
+              <h3>Floor tiles · construction residue removed</h3>
+              <p>Tiles covered in construction residue and dirt, cleaned with the laser.</p>
+            </article>
+            <article class="video-card">
+              <a class="video-facade" href="https://www.youtube.com/shorts/b7PRQMCuKUM" data-video-id="b7PRQMCuKUM" data-video-title="Copper plate · contaminants removed" target="_blank" rel="noopener noreferrer" aria-label="Play video: Copper plate · contaminants removed (opens YouTube)">
+                <img src="assets/img/video-posters/copper-plate-contaminants.webp" width="360" height="640" alt="" loading="lazy" decoding="async" />
+                <span class="video-play" aria-hidden="true"><svg class="icon icon--fill"><use href="#i-play" /></svg></span>
+              </a>
+              <h3>Copper plate · contaminants removed</h3>
+              <p>Contaminants cleaned off a copper plate in real time.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--deep follow-us" aria-labelledby="follow-title">
+        <div class="container follow-layout">
+          <div>
+            <p class="eyebrow">Follow us</p>
+            <h2 id="follow-title">More clips on our channels</h2>
+            <p>We post new jobs regularly.</p>
+          </div>
+          <ul class="follow-links">
+            <li><a class="button button--ghost" href="https://youtube.com/@alsr-lazersa?si=rccTeD06vxPiSs9j" target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-youtube" /></svg>YouTube</a></li>
+            <li><a class="button button--ghost" href="https://www.tiktok.com/@alsr753?_r=1&amp;_t=ZS-9681ayNeko3" target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-tiktok" /></svg>TikTok</a></li>
+            <li><a class="button button--ghost" href="https://www.facebook.com/share/1BM2h2xgPa/" target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-facebook" /></svg>Facebook</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="band" aria-labelledby="cta-title">
         <div class="container band-content">
-          <div><p class="eyebrow">Want to see what laser cleaning can do?</p><h2>Tell us about <em>your project.</em></h2></div>
+          <div>
+            <p class="eyebrow">Got a similar job?</p>
+            <h2 id="cta-title">Send photos for a free assessment</h2>
+            <p class="band-note">Not sure it suits laser cleaning? We'll tell you honestly, and offer a free test patch where it makes sense.</p>
+          </div>
           <a class="button" href="index.html#contact">Get a quote</a>
         </div>
       </section>
