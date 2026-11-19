@@ -225,7 +225,7 @@ All answered or parked by the client (2026-11). Answers live in §0. Build **no*
 - [x] Videos: all 6 existing IDs verified via YouTube oEmbed; channel listing fetched; 5 new videos added; facades with posters; follow-us row; CTA band
 - [x] Images: 800 w and 1600 w WebP (portrait pair 600/1200), `srcset`/`sizes`, `width`/`height`, lazy everywhere except the hero (`fetchpriority="high"`). All 1600 w files are under 350 KB, 800 w under 150 KB
 - [x] Kebab-case renames under `assets/img/work/`; `assets/img/brand/og-image.jpg` (1200×630); posters in `assets/img/video-posters/`
-- [x] Unused media removed from the deploy: originals, `_result`/`_gallery` webps and the MP4s moved to `../ALSR Laser Cleaning - media archive/` (also still in git history). `HeroImage.jpg` is archived too; now the homepage hero (`assets/img/work/hero-laser-cleaning-800|1600.webp`, single image, no before/after tag)
+- [x] Unused media removed from the deploy: originals, `_result`/`_gallery` webps and the MP4s moved to `../ALSR Laser Cleaning - media archive/` (also still in git history). `HeroImage.jpg` is archived too; replaced by a client-supplied render of a wide cleaned band on rusted steel (no machine), cropped to assets/img/work/hero-laser-cleaning-560 and -860 (.webp).
 - [x] 404.html: self-contained inline CSS, absolute `https://alsr-sa.com/` links
 - Files: gallery.html, videos.html, 404.html, index.html (img refs), assets/img/**, assets/css/site.css, assets/js/site.js, partials/header.html (icons)
 - **Phase 4 notes:**
