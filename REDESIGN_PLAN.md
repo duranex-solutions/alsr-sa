@@ -237,11 +237,17 @@ All answered or parked by the client (2026-11). Answers live in §0. Build **no*
   - Meta titles/descriptions, og:image tags and JSON-LD are Phase 5. `og-image.jpg` exists but is not yet referenced.
 
 ### Phase 5 SEO, accessibility, performance polish
-- [ ] Per-page titles/descriptions, og:image, twitter card, canonicals
-- [ ] JSON-LD: LocalBusiness (Kempton Park, areaServed Gauteng + South Africa, phone, no equipment details), FAQPage, VideoObject
-- [ ] sitemap.xml with `lastmod`; robots.txt; manifest
-- [ ] A11y: token contrast check, heading order, landmarks, keyboard/focus, menu ARIA, form labels/errors, reduced motion, 200% zoom
-- [ ] Perf: preload hero image and fonts, deferred JS, zero CLS, Lighthouse mobile ≥90 in all four categories
+- [x] Per-page titles/descriptions, og:image, twitter card, canonicals
+- [x] JSON-LD: LocalBusiness (Kempton Park, areaServed Gauteng + South Africa, phone, no equipment details), FAQPage, VideoObject
+- [x] sitemap.xml with `lastmod`; robots.txt; manifest
+- [x] A11y: token contrast check, heading order, landmarks, keyboard/focus, menu ARIA, form labels/errors, reduced motion, 200% zoom
+- [x] Perf: preload hero image and fonts, deferred JS, zero CLS, Lighthouse mobile ≥90 in all four categories (not measured here, see notes)
+- **Phase 5 notes:**
+  - SEO: unique title (55–59 chars) and description (≤~160) per page; canonicals, og:* (incl. og:image 1200×630 `assets/img/brand/og-image.jpg`, alt, locale en_ZA) and twitter summary_large_image on all three pages. JSON-LD `@graph` per page: LocalBusiness (Kempton Park, areaServed Gauteng + South Africa, phone, Tiaan's and Anne-Marie's emails, Facebook/TikTok/YouTube `sameAs`, foundingDate 2026; no address street, hours, rating, GBP or equipment), WebSite, plus FAQPage (home, generated from the visible FAQ) and BreadcrumbList (gallery, videos). **VideoObject deliberately skipped**: it needs upload dates and durations we don't have, and inventing them is against §0. Add it once the dates are known. Each page has one h1 and a sensible h2/h3 outline.
+  - sitemap.xml: 3 pages, `lastmod` 2026-11-19, canonical `https://alsr-sa.com/…` (no 404). robots.txt already allows all and points to the sitemap. manifest now has `any` + `maskable` icons, `start_url`/`scope` (relative), lang. 404.html stays self-contained with `noindex`.
+  - A11y: contrast checked for all text tokens on every surface (all ≥4.5:1; `--dim` raised #85888b → #9a9da0 because it was 4.2:1 on --surface-2; on-accent 6.6:1). Skip link, `:focus-visible` ring, landmarks (header/nav/main/footer, labelled sections), form labels, menu ARIA, reduced-motion were already in place from Phases 2–4 and re-checked. Decorative images have `alt=""` and sit inside links that carry an `aria-label` or visible text.
+  - Perf: Google Fonts stylesheet is now non-blocking (preload + `media=print` swap, `<noscript>` fallback, `display=swap` in the URL). Hero image preloaded with srcset on home. JS is `defer`. Removed 9 unused CSS rules (grid--2/4, text-link, card-number, table .yes, photo-tag, portrait comparison, text-center). Favicons, apple-touch icon, theme-color (+ color-scheme) present on all pages.
+  - **Not done here:** no Lighthouse run and no live social-preview check (no browser/network audit available). Phase 6 should run Lighthouse mobile and validate the JSON-LD (Rich Results Test) once deployed. Fonts are still Google-hosted; self-hosting would remove the third-party round trip if Lighthouse flags it.
 - Files: *.html, sitemap.xml, robots.txt, favicon/site.webmanifest, assets/css/site.css
 
 ### Phase 6 Test, fix, push

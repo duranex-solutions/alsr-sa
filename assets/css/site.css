@@ -23,7 +23,7 @@
     --text: #f3f3f1;
     --text-2: #d0d1d2;
     --muted: #b2b5b8;
-    --dim: #85888b; /* decorative numbers only */
+    --dim: #9a9da0; /* decorative numbers only */
 
     /* Brand */
     --accent: #f07824;
@@ -285,29 +285,18 @@
     gap: var(--sp-5);
   }
 
-  .grid--2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .grid--3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .grid--4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
   @media (max-width: 900px) {
-    .grid--3,
-    .grid--4 {
+    .grid--3 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
   @media (max-width: 680px) {
-    .grid--2,
-    .grid--3,
-    .grid--4 {
+    .grid--3 {
       grid-template-columns: 1fr;
     }
   }
@@ -464,8 +453,7 @@
   }
 
   /* Text links */
-  .inline-link,
-  .text-link {
+  .inline-link {
     display: inline-flex;
     align-items: center;
     gap: var(--sp-2);
@@ -479,8 +467,7 @@
     color: var(--accent);
   }
 
-  .inline-link:hover,
-  .text-link:hover {
+  .inline-link:hover {
     color: var(--accent);
   }
 
@@ -523,16 +510,6 @@
   .card-icon .icon {
     width: 24px;
     height: 24px;
-  }
-
-  .card-number {
-    position: absolute;
-    top: var(--sp-5);
-    right: var(--sp-5);
-    color: var(--dim);
-    font-size: var(--fs-xs);
-    font-weight: 700;
-    letter-spacing: 0.1em;
   }
 
   /* Chips / tags */
@@ -667,10 +644,6 @@
 
   .table tr:last-child > * {
     border-bottom: 0;
-  }
-
-  .table .yes {
-    color: var(--ok);
   }
 
   /* Form */
@@ -1308,17 +1281,6 @@
 
   .hero-compare--single {
     grid-template-columns: 1fr;
-  }
-
-  .photo-tag {
-    position: absolute;
-    top: var(--sp-3);
-    left: var(--sp-3);
-    padding: var(--sp-1) var(--sp-3);
-    border: 1px solid currentColor;
-    border-radius: var(--radius-pill);
-    background: color-mix(in srgb, var(--bg-0) 82%, transparent);
-    backdrop-filter: blur(6px);
   }
 
   .hero-caption {
@@ -1980,10 +1942,6 @@
     object-fit: cover;
   }
 
-  .comparison-photos--portrait img {
-    aspect-ratio: 3 / 4;
-  }
-
   /* Image link that opens the lightbox (opens the large file directly without JS) */
   .lightbox-link {
     position: relative;
@@ -2561,10 +2519,6 @@
     overflow: hidden;
     clip-path: inset(50%);
     white-space: nowrap;
-  }
-
-  .text-center {
-    text-align: center;
   }
 
   /* .reveal is added by site.js only, so content is never hidden without JS */
