@@ -28,11 +28,8 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
     <link rel="manifest" href="favicon/site.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@700;800&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@700;800&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@700;800&display=swap" /></noscript>
+    <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -195,7 +192,7 @@
           <p class="eyebrow">Our work</p>
           <h1>Laser cleaning <em>before and after</em></h1>
           <p>Real jobs, photographed before and after. Select any photo to enlarge it. Unsure whether your surface is a fit? <a class="inline-link" href="index.html#contact">Send us photos for a free assessment.</a></p>
-          <div class="chip-row" aria-label="Gallery categories">
+          <div class="chip-row" role="group" aria-label="Gallery categories">
             <a class="chip" href="#rust">Rust and corrosion <small>5 pairs</small></a>
             <a class="chip" href="#paint">Paint and coatings <small>2 pairs</small></a>
             <a class="chip" href="#contaminants">Contaminants and residue <small>1 pair</small></a>

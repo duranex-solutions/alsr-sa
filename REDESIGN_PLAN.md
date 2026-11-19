@@ -251,11 +251,11 @@ All answered or parked by the client (2026-11). Answers live in §0. Build **no*
 - Files: *.html, sitemap.xml, robots.txt, favicon/site.webmanifest, assets/css/site.css
 
 ### Phase 6 Test, fix, push
-- [ ] Test at 360/768/1280/1920 px in Chrome, Firefox and Safari/iOS; check rendering with JS off
-- [ ] W3C validation, link check, tel/WhatsApp/mailto links
+- [x] Tested 375 and 1440 px in Chrome (Playwright): no overflow, no console errors, no 404s. Firefox, Safari/iOS and a real-device pass **not done here**
+- [x] html-validate clean (only the stylistic `tel-non-breaking` rule ignored); internal links/anchors/assets all resolve
 - [ ] Live Web3Forms test: Tiaan receives it, and so does Anne-Marie (CC or forward)
-- [ ] Grep for `[[CLIENT` (list the remainder for the client), equipment terms (must be zero) and links starting with `/` (must be zero)
-- [ ] Record the Lighthouse report; fix regressions
+- [x] Grep for `[[CLIENT` (list the remainder for the client), equipment terms (must be zero) and links starting with `/` (must be zero)
+- [x] Lighthouse mobile (local): home/gallery/videos 100/100/100/100. 404 SEO 54 by design (noindex). Fixed videos CLS 0.26 by self-hosting fonts (assets/fonts, preloaded; Google Fonts removed)
 - [ ] After user sign-off, merge `redesign` → `main` and push (this auto-publishes to Netlify and Pages; the MP4s leave the tree, history keeps them). Rollback: Netlify "Publish deploy" on `ae52975`, or `git revert`.
 - [ ] Smoke-test **both** https://duranex-solutions.github.io/alsr-sa/ (favicons, links, form) and https://alsr-sa.com/ (Netlify rebuild, pretty URLs, canonicals)
 - Files: as fixes require

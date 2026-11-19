@@ -28,11 +28,8 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
     <link rel="manifest" href="favicon/site.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@700;800&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@700;800&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@700;800&display=swap" /></noscript>
+    <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -195,7 +192,7 @@
           <p class="eyebrow">Our work</p>
           <h1>Laser cleaning <em>videos</em></h1>
           <p>Short clips of real jobs, filmed on site. Select a video to play it. It loads from YouTube only when you do.</p>
-          <div class="chip-row" aria-label="Video categories">
+          <div class="chip-row" role="group" aria-label="Video categories">
             <a class="chip" href="#paint-videos">Paint removal <small>4 videos</small></a>
             <a class="chip" href="#rust-videos">Rust removal <small>5 videos</small></a>
             <a class="chip" href="#residue-videos">Contaminants and residue <small>2 videos</small></a>
