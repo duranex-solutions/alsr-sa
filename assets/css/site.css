@@ -1412,6 +1412,16 @@
       var(--grad-card);
   }
 
+  @media (min-width: 601px) {
+    .service-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-grid .materials-card {
+      grid-column: 1 / -1;
+    }
+  }
+
   .materials-list {
     display: flex;
     flex-wrap: wrap;
@@ -2511,6 +2521,10 @@
   @media (max-width: 480px) {
     .card:not(.before-after-pair) {
       padding: var(--sp-5);
+    }
+
+    .card.step:not(.before-after-pair) {
+      padding-top: var(--sp-7);
     }
 
     .service-card::before {

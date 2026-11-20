@@ -97,7 +97,7 @@
     const submit = form.querySelector("[type='submit']");
     const submitLabel = submit ? submit.textContent : "";
     const fallback =
-      'Please email <a href="mailto:tiaan.alsr@gmail.com,sales.alsr@gmail.com?subject=Quote%20request">Tiaan and Anne-Marie</a> ' +
+      'Please email <a href="mailto:tiaan.alsr@gmail.com,sales.alsr@gmail.com?subject=Enquiry">Tiaan and Anne-Marie</a> ' +
       'or WhatsApp <a href="https://wa.me/27826141820" target="_blank" rel="noopener noreferrer">082 614 1820</a> instead.';
 
     const setStatus = (type, html) => {
@@ -134,7 +134,7 @@
         const result = await response.json().catch(() => ({}));
         if (!response.ok || !result.success) throw new Error(result.message || "Request failed");
         form.reset();
-        setStatus("ok", "Thanks, your quote request has been sent. We'll be in touch soon.");
+        setStatus("ok", "Thanks, your enquiry has been sent. We'll be in touch soon.");
       } catch (error) {
         setStatus("error", "Sorry, your request couldn't be sent. " + fallback);
       } finally {
