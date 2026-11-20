@@ -256,6 +256,22 @@
     });
   });
 
+  /* ---- Mobile call bar: appears once the hero buttons are off screen ---- */
+  const bar = document.querySelector(".mobile-bar");
+  if (bar) {
+    const trigger = document.querySelector("[data-bar-trigger]");
+    const show = (on) => bar.classList.toggle("is-visible", on);
+    if (trigger && "IntersectionObserver" in window) {
+      new IntersectionObserver(([entry]) => {
+        show(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+      }).observe(trigger);
+    } else {
+      const check = () => show(window.scrollY > 400);
+      window.addEventListener("scroll", check, { passive: true });
+      check();
+    }
+  }
+
   /* ---- Footer year ---- */
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = String(new Date().getFullYear());

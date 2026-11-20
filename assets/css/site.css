@@ -994,6 +994,13 @@
       border-top: 1px solid var(--line-strong);
       background: var(--bg-0);
       box-shadow: 0 -10px 30px -10px rgb(0 0 0 / 70%);
+      transition: transform 250ms ease, visibility 250ms;
+    }
+
+    /* With JS the bar stays hidden until the hero buttons scroll out of view */
+    .js .mobile-bar:not(.is-visible) {
+      visibility: hidden;
+      transform: translateY(100%);
     }
 
     .mobile-bar .button {
