@@ -97,7 +97,7 @@
     const submit = form.querySelector("[type='submit']");
     const submitLabel = submit ? submit.textContent : "";
     const fallback =
-      'Please email <a href="mailto:tiaan.alsr@gmail.com,sales.alsr@gmail.com?subject=Enquiry">Tiaan and Anne-Marie</a> ' +
+      'Please email <a href="mailto:tiaan.alsr@gmail.com?subject=Enquiry">Tiaan</a> ' +
       'or WhatsApp <a href="https://wa.me/27826141820" target="_blank" rel="noopener noreferrer">082 614 1820</a> instead.';
 
     const setStatus = (type, html) => {
